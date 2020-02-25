@@ -1,0 +1,7 @@
+@charset "utf-8";
+#footer .footer-nav .item .item-sub-title a {
+	color: #555555 !important;
+}
+#footer .footer-nav .item .item-sub-title a:hover {
+	color: #555555 !important;
+}

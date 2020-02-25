@@ -1,0 +1,126 @@
+{include file="public/header"}
+<link rel="stylesheet" href="__TROOT__/layuiadmin/layui/css/layui.css" media="all">
+<script src="__TROOT__/layuiadmin/layui/layui.js"></script>
+<script src="__TROOT__/layuiadmin/layui_exts/city-picker/city-picker.data.js"></script>
+<link href="__TROOT__/layuiadmin/layui_exts/city-picker/city-picker.css" rel="stylesheet" />
+<div id="website" class="trans">
+    <div class="blank20"></div>
+    <style>
+        #products .list-item {
+            width: 21.66%;
+            margin-left: 1.5%;
+            margin-bottom: 2.5%;
+            vertical-align: top;
+        }
+        .on{
+            color: #009FE3 !important;
+        }
+    </style>
+    <div id="products">
+        <div class="wrap1200">
+            <div class="products-list-title relative">
+                <div class="title fl">个人中心</div>
+            </div>
+            <div class="blank25"></div>
+            <div class="blank25"></div>
+            <div class="fz0">
+                <div class='list-item inline-block '>
+                    <div class="list-item-wrap" style="min-height: auto">
+                        <div class="list-item-name over">
+                            <a href="{:url('users/password')}" title="修改密码">修改密码</a>
+                        </div>
+                        <div class="list-item-name over">
+                            <a href="{:url('users/users')}" title="个人资料">个人资料</a>
+                        </div>
+                        <div class="list-item-name over">
+                            <a href="{:url('users/orders')}" class="on" title="我的订单">我的订单</a>
+                        </div>
+                        <div class="list-item-name over">
+                            <a href="javascript:;" id="logout" title="退出">退出</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class='list-item inline-block' style="width: 75%">
+                    <div class="list-item-wrap" style="min-height: auto">
+                        <span>我的订单</span>
+                    </div>
+                    <div class="list-item-wrap" style="min-height: auto">
+                        <table class="layui-table" lay-skin="line">
+                            <tr>
+                                <th>订单编号</th>
+                                <th>商品编号</th>
+                                <th>商品名称</th>
+                                <th>购买数量</th>
+                                <th>创建时间</th>
+                                <th>订单状态</th>
+                               <th>操作</th>
+                            </tr>
+                            {if condition="count($orders) > 0"}
+                              {foreach $orders as $o}
+                              <tr>
+                                  <td>{$o['orderID']}</td>
+                                  <td>{$o['goodsID']}</td>
+                                  <td>{$o['goodsName']}</td>
+                                  <td>{$o['goodsCount']}</td>
+                                  <td>{:date('Y-m-d H:i:s',$o['create_t'])}</td>
+                                  <td>
+                                      {switch name="$o['status']"}
+                                      {case value="1"}<span class="layui-btn layui-btn-normal layui-btn-xs">已付款</span>{/case}
+                                      {case value="2"}<span class="layui-btn layui-btn-normal layui-btn-xs">已发货</span>{/case}
+                                      {/switch}
+                                  </td>
+                                 <td><a style="color: #0D99DB" href="javascript:;" onclick="del('{$o['id']}')">删除</a></td>
+                              </tr>
+                              {/foreach}
+                            {else}
+                              <tr>
+                                <td colspan="7" style="text-align:center;">暂无订单</td>
+                              </tr>
+                            {/if}
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="blank20"></div>
+            <div class="blank20 hide-992"></div>
+            <div class="blank20 hide-992"></div>
+            <div id="turn_page">
+                {$orders->render()}
+            </div>
+            <div class="blank20"></div>
+            <div class="blank20 hide-992"></div>
+            <div class="blank20 hide-992"></div>
+            <div class="blank20 hide-992"></div>
+        </div>
+        <script>
+            function del(id){
+              layui.use(['layer'],function () {
+                var layer = layui.layer;
+                layer.confirm("您确定删除该订单吗？",function(){
+            		  $.post("{:url('users/orders_del')}",{id:id},function (res) {
+                      layer.msg(res.msg,{icon:res.icon,time:1000},function(){
+                        window.location.reload();
+                      });
+                    },'json');
+            		});
+              });
+            }
+            //退出
+            layui.use(['layer'],function () {
+                var layer = layui.layer;
+              $('#logout').click(function(){
+                layer.confirm("确认退出吗？",function(){
+                  $.get("{:url('users/logout')}",function(res){
+                      layer.msg(res.msg,{icon: 6,time:1000},function(){
+                          window.location.href = "{:url('login/index')}";
+                      });
+                  },'json');
+                });
+              });
+            });
+
+        </script>
+    </div>
+</div>
+{include file="public/footer"}

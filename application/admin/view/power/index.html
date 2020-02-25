@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+ {include file="public:title"/}
+ <style media="screen">
+   .layui-table tbody tr:hover{
+     background-color: #fff;
+   }
+ </style>
+</head>
+<body>
+<div class="layui-fluid" class="layui-form">
+  <div class="layui-card">
+    <div class="layui-tab layui-tab-brief">
+        <crmblok>
+          <button class="layui-btn layui-btn-normal" onclick="crm_admin_show('添加角色','{:url('power/add')}')"><i class="layui-icon">&#xe608;</i>添加角色</button>
+        </crmblok>
+        <table class="layui-table" >
+          <thead>
+            <tr>
+              <th width="50" align="center">ID</th>
+              <th width="120" align="center">角色名称</th>
+              <th align="center">权限说明</th>
+              <th width="60" align="center">状态</th>
+              <th width="100" align="center">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+          {volist name="list" id="vv"}
+            <tr>
+              <td>{$vv['id']}</td>
+              <td>{$vv['title']}</td>
+              <td>{$vv['remark']}</td>
+              <td>
+                {switch name="$vv['status']"}
+                {case value="1"}<button class="layui-btn layui-btn-normal layui-btn-xs">正常</button>{/case}
+                {default /}<button class="layui-btn layui-btn-danger layui-btn-xs">停用</button>
+                {/switch}
+              </td>
+              <td>
+                {if condition="$vv['id'] == 1"}
+                  <button class="layui-btn layui-btn-normal layui-btn-sm layui-btn-disabled"><i class="layui-icon"></i></button>
+                  <button class="layui-btn layui-btn-normal layui-btn-sm layui-btn-disabled"><i class="layui-icon"></i></button>
+                {else}
+                  <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="crm_admin_show('编辑角色','{:url('power/edit',array('id'=>$vv.id))}')"><i class="layui-icon"></i></button>
+                  <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="del({$vv['id']})"><i class="layui-icon"></i></button>
+                {/if}
+              </td>
+            </tr>
+          {/volist}
+          </tbody>
+        </table>
+        <script type="text/javascript">
+          function del(id){
+            layer.confirm('确认要删除吗？',function(){
+              $.get("{:url('power/del')}?id="+id,function(data){
+                var message = JSON.parse(data);
+                if (message.icon == 6){
+                    layer.msg(message.msg,{icon: message.icon,time:1000},function () {
+                        location.href=location.href
+                   });
+                } else {
+                    layer.msg(message.msg,{icon: message.icon,time:1000});
+                }
+              })
+            })
+          }
+        </script>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

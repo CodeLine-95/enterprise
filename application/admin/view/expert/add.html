@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+{include file="public:title"/}
+<style media="screen">
+.layui-form-select{
+  width: 165px;
+}
+.layui-form-item .layui-input-inline{
+  width: auto;
+}
+</style>
+</head>
+<body>
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">添加专家</div>
+          <div class="layui-form layui-card-body" pad15>
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="name">名称</label>
+              <div class="layui-input-block">
+                <input type="text" name="name" id="name" lay-verify="required" class="layui-input">
+              </div>
+  			</div>
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="tags">标签</label>
+              <div class="layui-input-block">
+                <input type="text" name="tags" id="tags" placeholder="以逗号分隔" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="face">缩略图</label>
+              <div class="layui-input-block">
+                <button type="button" style="float:left;margin-right:1%;" id="face" class="layui-btn"><i class="layui-icon">&#xe67c;</i>上传</button>
+                <input type="text" style="width:53%;float:left;display:none;background-color:#dcdcdc;" readonly name="face" class="layui-input">
+                <div id="pic_img" style="margin-top: 10px;">
+
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="territory">领域</label>
+              <div class="layui-input-block">
+                <input type="text" name="territory" id="territory" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="desc">简介</label>
+              <div class="layui-input-block">
+                <textarea name="desc" id="desc" class="layui-textarea"></textarea>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="content">内容</label>
+              <div class="layui-input-block">
+                <textarea name="contnet" id="content" style="display: none;"></textarea>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">推荐</label>
+              <div class="layui-input-inline">
+                <input type="radio" name="is_recommend" title="推荐" value="1" checked class="layui-input">
+                <input type="radio" name="is_recommend" title="未推荐" value="0" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">显示</label>
+              <div class="layui-input-inline">
+                <input type="radio" name="is_show" title="显示" value="1" checked class="layui-input">
+                <input type="radio" name="is_show" title="隐藏" value="0" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                  <label class="layui-form-label"><button class="layui-btn" lay-submit lay-filter="add">添加</button></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    layui.use(['form','upload','laydate','layedit'], function(){
+      var form = layui.form,upload = layui.upload,laydate = layui.laydate,layedit = layui.layedit;
+      //多图上传实例
+      upload.render({
+        elem: '#face',
+        url: '{:url("AjaxAction/upload")}',
+        accept:"images",
+        acceptMime: 'image/*',
+        exts:"jpg|png|gif|bmp|jpeg",
+        auto:true,
+        size:{$conf['maxfile']},
+        drag:false,
+        before: function(obj) {
+          layer.msg('上传中...', {icon: 16,shade: 0.01,time: 0})
+        },
+        done: function(res) {
+          layer.close(layer.msg('上传成功！'));
+          $('input[name=face]').val(res.data);
+          $('#pic_img').html('<img src="'+res.data+'" />');
+        }
+        ,error: function(){
+          layer.msg('上传错误！');
+        }
+      });
+      var index = layedit.build('content', {
+        tool: [
+          'strong' //加粗
+          ,'italic' //斜体
+          ,'underline' //下划线
+          ,'del' //删除线
+          ,'|' //分割线
+          ,'left' //左对齐
+          ,'center' //居中对齐
+          ,'right' //右对齐
+          ,'link' //超链接
+          ,'unlink' //清除链接
+          ,'face' //表情
+          ,'help' //帮助
+        ]
+      });
+      form.on('submit(add)', function(data){
+        data.field.content = layedit.getContent(index);
+        $.post('{:url("expert/add")}',data.field,function (res) {
+          if (res.icon == 6){
+            layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+              window.parent.location.reload();
+            });
+          } else {
+            layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+              window.location.reload();
+            });
+          }
+        },'json');
+        return false;
+      });
+    });
+  </script>
+</body>
+</html>

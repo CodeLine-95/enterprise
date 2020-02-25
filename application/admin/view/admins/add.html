@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+{include file="public:title"/}
+<style media="screen">
+.layui-form-select{
+  width: 165px;
+}
+.layui-form-item .layui-input-inline{
+  width: auto;
+}
+</style>
+</head>
+<body>
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">添加管理员</div>
+          <div class="layui-form layui-card-body" pad15>
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="user_name">用户名</label>
+              <div class="layui-input-block">
+                <input type="text" name="user_name" id="user_name" lay-verify="required" class="layui-input">
+              </div>
+  			    </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="user_name">头像</label>
+              <div class="layui-input-block">
+                <button type="button" style="float:left;margin-right:1%;" id="user_face" class="layui-btn"><i class="layui-icon">&#xe67c;</i>上传头像</button>
+                <input type="text" style="width:53%;float:left;display:none;background-color:#dcdcdc;" readonly name="user_face" id="user_face" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="role_id">角色</label>
+              <div class="layui-input-block">
+                {foreach $roles as $r}
+                  <input type="radio" name="role_id" title="{$r.title}" value="{$r.id}" class="layui-input">
+                {/foreach}
+              </div>
+  			    </div>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                  <label class="layui-form-label"><button class="layui-btn" lay-submit lay-filter="add">添加</button></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    layui.use(['form','upload'], function(){
+      var form = layui.form,upload = layui.upload;
+      //多图上传实例
+      upload.render({
+        elem: '#user_face',
+        url: '{:url("AjaxAction/upload")}',
+        accept:"images",
+        acceptMime: 'image/*',
+        exts:"jpg|png|gif|bmp|jpeg",
+        auto:true,
+        size:51200,
+        drag:false,
+        before: function(obj) {
+          layer.msg('图片上传中...', {icon: 16,shade: 0.01,time: 0})
+        },
+        done: function(res) {
+            layer.close(layer.msg('上传成功！'));
+            $('input[name=user_face]').val(res.data);
+            $('input[name=user_face]').css({'display':'block'});
+        }
+        ,error: function(){
+            layer.msg('上传错误！');
+        }
+      });
+      form.on('submit(add)', function(data){
+        $.ajax({
+            type:'POST',
+            url:'{:url("admins/add")}',
+            data: {
+                data:JSON.stringify(data.field)
+            },
+            success:function (data) {
+                var status = JSON.parse(data);
+                if (status.icon == 6){
+                    layer.msg(status.msg,{icon: status.icon,time:1000},function(){
+                        window.parent.location.reload();
+                    });
+                } else {
+                    layer.msg(status.msg,{icon: status.icon,time:1000});
+                }
+            }
+        });
+        return false;
+      });
+    });
+  </script>
+</body>
+</html>

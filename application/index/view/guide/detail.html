@@ -1,0 +1,58 @@
+{include file="public/header"}
+<div id="website" class="trans">
+    <div id="banner" class="banner relative fz0 swiper-container max-limit">
+        <div class="swiper-wrapper">
+            <div class="item swiper-slide relative over"> <img src="__TROOT__/index/img/63f6710629.jpg" class="max-w100 block trans relative"> </div>
+        </div>
+    </div>
+    <div class="blank20"></div>
+    <div id="products">
+        <div class="wrap1200 path"> 当前位置：<a href='/'>首页</a> > <a href='{:url("guide/index")}'>导游信息</a> >  </div>
+        <div class="wrap1200">
+            <div class="detail-box clean">
+                <div class="img fl">
+                    <div class="big-imgs swiper-container text-center">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide fz0">
+                                <img src="{$field.face}" alt="" class="max-w100" >
+                            </div>
+<!--                            <div class="swiper-slide fz1">-->
+<!--                                <img src="../../uploads/allimg/190419/1-1Z419163Z2.jpg" alt="" class="max-w100" >-->
+<!--                            </div>-->
+<!--                            <div class="swiper-slide fz2">-->
+<!--                                <img src="../../uploads/allimg/190419/1-1Z419163Z3.jpg" alt="" class="max-w100" >-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                    <!--<div class="small-img relative">
+                      <div class="fa fa-angle-left fa-3x absolute"></div>
+                      <div class="small-img-wrap swiper-container clean">
+                        <div class="swiper-wrapper"> <div class="small-img-item swiper-slide fz0"><img src="/204/uploads/allimg/190419/1-1Z419163U2.jpg" width="100%"/></div><div class="small-img-item swiper-slide fz1"><img src="/204/uploads/allimg/190419/1-1Z419163Z2.jpg" width="100%"/></div><div class="small-img-item swiper-slide fz2"><img src="/204/uploads/allimg/190419/1-1Z419163Z3.jpg" width="100%"/></div> </div>
+                      </div>
+                      <div class="fa fa-angle-right fa-3x absolute"></div>
+                    </div>-->
+                </div>
+                <div class="right-info fr">
+                    <div class="blank20"></div>
+                    <div class="name">{$field.name}</div>
+                    <div class="blank20"></div>
+                    <div class="brief">{$field.desc}</div>
+                    <div class="blank12"></div>
+                </div>
+            </div>
+        </div>
+        <div class="blank25"></div>
+        <div class="wrap1200 des-wrap">
+            <div class="card-wrap clean">
+                <div class="card fl on">详细内容</div>
+            </div>
+            <div class="des block">
+                {$field.content}
+            </div>
+        </div>
+    </div>
+    <div class="blank20"></div>
+    <div class="blank20"></div>
+    <div class="blank20"></div>
+</div>
+{include file="public/footer"}

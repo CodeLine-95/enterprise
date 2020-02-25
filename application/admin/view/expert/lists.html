@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+ {include file="public:title"/}
+ <style media="screen">
+   .layui-table tbody tr:hover{
+     background-color: #fff;
+   }
+   .layui-form-select{
+    width: 100px;
+   }
+   .layui-form-select dl dd.layui-this {
+     background-color: #1E9FFF;
+     color: #fff;
+   }
+   .layui-table td{
+     display:table-cell;
+     vertical-align: middle;
+     height:auto;
+     overflow:visible;
+     text-overflow:inherit;
+     white-space:normal;
+   }
+ </style>
+</head>
+<body>
+<div class="layui-fluid" class="layui-form">
+  <div class="layui-card">
+    <div class="layui-tab layui-tab-brief">
+      <crmblok>
+          <div style="position: relative;">
+            <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+            <button class="layui-btn layui-btn-normal" onclick="crm_admin_show('添加','{:url('expert/add')}')"><i class="layui-icon">&#xe608;</i>添加</button>
+            <form class="layui-form" method="get" style="display:inline-block;position: absolute;right: 0;">
+              <div class="layui-input-inline">
+                <select name="type">
+                  <option value="1" {if condition="$get['type'] == 1"}selected{/if}>名称</option>
+                  <option value="2" {if condition="$get['type'] == 2"}selected{/if}>领域</option>
+                </select>
+              </div>
+              <div class="layui-input-inline">
+                <input type="text" name="name" value="{$get['name']}" class="layui-input" style="background-color:#eee;border:none;">
+              </div>
+              <button class="layui-btn layui-btn-normal" type="submit"><i class="layui-icon layui-icon-search"></i>搜索</button>
+            </form>
+          </div>
+      </crmblok>
+      <table class="layui-table">
+          <thead>
+            <tr>
+              <th width="25" align="center">
+                <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+              </th>
+              <th align="center" style="width:80px;">序号</th>
+              <th align="center">名称</th>
+              <th align="center">图片</th>
+              <th align="center">领域</th>
+              <th align="center">标签</th>
+              <th align="center">推荐</th>
+              <th align="center">显示</th>
+              <th align="center">时间</th>
+              <th align="center">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+          {empty name="list"}
+            <tr align="center" style="height:500px;"><td colspan="11">暂无专家</td></tr>
+          {else}
+            {foreach $list as $l}
+              <tr>
+                <td>
+                  <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$l.id}'><i class="layui-icon">&#xe605;</i></div>
+                </td>
+                <td>{$l['id']}</td>
+                <td>{$l['name']}</td>
+                <td>{if condition="!empty($l['face'])"}<img src="{$l['face']}" alt="">{/if}</td>
+                <td>{$l['territory']}</td>
+                <td>{$l['tags']}</td>
+                <td>
+                  {switch name="$l['is_recommend']"}
+                  {case value="1"}推荐{/case}
+                  {default /}未推荐
+                  {/switch}
+                </td>
+                <td>
+                  {switch name="$l['is_show']"}
+                  {case value="1"}显示{/case}
+                  {default /}隐藏
+                  {/switch}
+                </td>
+                <td>{:date('Y-m-d H:i:s',$l['create_t'])}</td>
+                <td>
+                	<button class="layui-btn layui-btn-normal layui-btn-sm" onclick="crm_admin_show('编辑','{:url('expert/edit',['id'=>$l['id']])}')">编辑</button>
+                  <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="del('{$l['id']}')">删除</button>
+                </td>
+              </tr>
+            {/foreach}
+          {/empty}
+          </tbody>
+        </table>
+      <div style="text-align: center">
+        <div class="laypage-main">
+          {$list->render()}
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <script>
+  	function del(id)
+  	{
+  		layer.confirm("您确定删除该专家吗？",function(){
+  		  $.post("{:url('expert/del')}",{id:id},function (res) {
+            layer.msg(res.msg,{icon:res.icon,time:1000},function(){
+              window.location.reload();
+            });
+          },'json');
+  		});
+  	}
+    function delAll() {
+      var datas = tableCheck.getData();
+      layer.confirm("确认删除选择的专家吗？",function(){
+        $.post("{:url('expert/del')}",{id:JSON.stringify(datas)},function (res) {
+          layer.msg(res.msg,{icon:res.icon,time:1000},function(){
+            window.location.reload();
+          });
+        },'json');
+      });
+    }
+  </script>
+</body>
+</html>

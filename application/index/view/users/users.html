@@ -1,0 +1,210 @@
+{include file="public/header"}
+<link rel="stylesheet" href="__TROOT__/layuiadmin/layui/css/layui.css" media="all">
+<script src="__TROOT__/layuiadmin/layui/layui.js"></script>
+<script src="__TROOT__/layuiadmin/layui_exts/city-picker/city-picker.data.js"></script>
+<link href="__TROOT__/layuiadmin/layui_exts/city-picker/city-picker.css" rel="stylesheet" />
+<div id="website" class="trans">
+    <div class="blank20"></div>
+    <style>
+        #products .list-item {
+            width: 21.66%;
+            margin-left: 1.5%;
+            margin-bottom: 2.5%;
+            vertical-align: top;
+        }
+        .on{
+            color: #009FE3 !important;
+        }
+        .layui-form-label{
+            text-align: right;
+            width: 80px;
+        }
+        .layui-input-block{
+            margin-left: 80px;
+        }
+        .layui-form-radio>i:hover, .layui-form-radioed>i {
+            color: #009FE3;
+        }
+    </style>
+    <div id="products">
+        <div class="wrap1200">
+            <div class="products-list-title relative">
+                <div class="title fl">个人中心</div>
+            </div>
+            <div class="blank25"></div>
+            <div class="blank25"></div>
+            <div class="fz0">
+                <div class='list-item inline-block '>
+                    <div class="list-item-wrap" style="min-height: auto">
+                        <div class="list-item-name over">
+                            <a href="{:url('users/password')}" title="修改密码">修改密码</a>
+                        </div>
+                        <div class="list-item-name over">
+                            <a href="{:url('users/users')}" class="on" title="个人资料">个人资料</a>
+                        </div>
+                        <div class="list-item-name over">
+                            <a href="{:url('users/orders')}" title="我的订单">我的订单</a>
+                        </div>
+                        <div class="list-item-name over">
+                            <a href="javascript:;" id="logout" title="退出">退出</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class='list-item inline-block' style="width: 75%">
+                    <div class="list-item-wrap" style="min-height: auto">
+                        <span>个人资料</span>
+                    </div>
+                    <div class="list-item-wrap" style="min-height: auto">
+                        <div class="layui-form">
+                            <input type="hidden" name="id" value="{$user.id}">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" for="user_name">姓名</label>
+                                <div class="layui-input-block">
+                                    <input type="text" class="layui-input" value="{$user.user_name}" id="user_name" name="user_name">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" for="user_email">邮箱</label>
+                                <div class="layui-input-block">
+                                    <input type="email" name="user_email" value="{$user.user_email}" id="user_email" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" for="user_face">头像</label>
+                                <div class="layui-input-block">
+                                    <button type="button" style="float:left;margin-right:1%;" id="user_face" class="layui-btn"><i class="layui-icon">&#xe67c;</i>上传头像</button>
+                                    <input type="text" value="{$user.user_face}" style="width:53%;float:left;display:none;background-color:#dcdcdc;" readonly name="user_face" class="layui-input">
+                                    {if condition="empty($user.user_face)"}
+                                    <div id="pic_img" style="margin-top: 10px;">
+
+                                    </div>
+                                    {else}
+                                    <div id="pic_img" style="margin-top: 10px;">
+                                        <img src="{$user.user_face}" alt="">
+                                    </div>
+                                    {/if}
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">性别</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="user_sex" title="男" value="0" {if condition="$user.user_sex == 0"}checked{/if}  class="layui-input">
+                                    <input type="radio" name="user_sex" title="女" value="1" {if condition="$user.user_sex == 1"}checked{/if} class="layui-input">
+                                    <input type="radio" name="user_sex" title="保密" value="2" {if condition="$user.user_sex == 2"}checked{/if} class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" for="city-picker">城市</label>
+                                <div class="layui-input-block">
+                                    <input type="text" autocomplete="on" value="{$user.user_city}" class="layui-input" id="city-picker" name="user_city" readonly="readonly" data-toggle="city-picker" placeholder="请选择">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"></label>
+                                <div class="layui-input-block">
+                                    <input type="text" autocomplete="on" value="{$user.user_city1}" class="layui-input" name="user_city1" placeholder="请输入详细地址">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" for="user_birthday">生日</label>
+                                <div class="layui-input-block">
+                                    <input type="text" class="layui-input" value="{$user.user_birthday}" name="user_birthday" id="user_birthday">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" for="user_sign">签名</label>
+                                <div class="layui-input-block">
+                                    <textarea name="user_sign" id="user_sign" class="layui-textarea">{$user.user_sign}</textarea>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <label class="layui-form-label"><button class="layui-btn" lay-submit lay-filter="edit">保存</button></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blank20"></div>
+            <div class="blank20 hide-992"></div>
+            <div class="blank20 hide-992"></div>
+            <div class="blank20"></div>
+            <div class="blank20 hide-992"></div>
+            <div class="blank20 hide-992"></div>
+            <div class="blank20 hide-992"></div>
+        </div>
+    </div>
+    <script>
+        layui.config({
+            base: '__TROOT__/layuiadmin/layui_exts/' //静态资源所在路径
+        }).extend({
+            citypicker: 'city-picker/city-picker' // {/}的意思即代表采用自有路径，即不跟随 base 路径
+        }).use(['citypicker'], function() {
+            var $ = layui.$, cityPicker = layui.citypicker;
+            var currentPicker = new cityPicker("#city-picker", {
+                provincename: "provinceId",
+                cityname: "cityId",
+                districtname: "districtId",
+                level: 'districtId', // 级别
+            });
+        });
+        layui.use(['form','upload','laydate'],function () {
+            var form = layui.form,upload = layui.upload,laydate = layui.laydate;
+            //时间
+            laydate.render({
+                elem: '#user_birthday' //指定元素
+            });
+            //多图上传实例
+            upload.render({
+                elem: '#user_face',
+                url: '{:url("admin/AjaxAction/upload")}',
+                accept:"images",
+                acceptMime: 'image/*',
+                exts:"jpg|png|gif|bmp|jpeg",
+                auto:true,
+                size:51200,
+                drag:false,
+                before: function(obj) {
+                    layer.msg('图片上传中...', {icon: 16,shade: 0.01,time: 0})
+                },
+                done: function(res) {
+                    layer.close(layer.msg('上传成功！'));
+                    $('input[name=user_face]').val(res.data);
+                    $('#pic_img').html('<img src="'+res.data+'" />');
+                }
+                ,error: function(){
+                    layer.msg('上传错误！');
+                }
+            });
+            //保存信息
+            form.on('submit(edit)', function(data){
+                $.post('{:url("users/users")}',data.field,function (res) {
+                    if (res.icon == 6){
+                        layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+                            window.parent.location.reload();
+                        });
+                    } else {
+                        layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+                            window.location.reload();
+                        });
+                    }
+                },'json');
+                return false;
+            });
+
+            //退出
+            $('#logout').click(function(){
+              layer.confirm("确认退出吗？",function(){
+                $.get("{:url('users/logout')}",function(res){
+                    layer.msg(res.msg,{icon: 6,time:1000},function(){
+                        window.location.href = "{:url('login/index')}";
+                    });
+                },'json');
+              });
+            });
+        });
+    </script>
+</div>
+{include file="public/footer"}

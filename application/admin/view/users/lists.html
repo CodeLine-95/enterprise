@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+ {include file="public:title"/}
+ <style media="screen">
+   .layui-table tbody tr:hover{
+     background-color: #fff;
+   }
+   .layui-form-select{
+    width: 100px;
+   }
+   .layui-form-select dl dd.layui-this {
+     background-color: #1E9FFF;
+     color: #fff;
+   }
+ </style>
+</head>
+<body>
+<div class="layui-fluid" class="layui-form">
+  <div class="layui-card">
+    <div class="layui-tab layui-tab-brief">
+      <crmblok>
+          <div style="position: relative;">
+            <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+            <button class="layui-btn layui-btn-normal" onclick="crm_admin_show('添加','{:url('users/add')}')"><i class="layui-icon">&#xe608;</i>添加</button>
+            <form class="layui-form" method="get" style="display:inline-block;position: absolute;right: 0;">
+              <div class="layui-input-inline">
+                <select name="user_type">
+                  <option value="1" {if condition="$get['user_type'] == 1"}select{/if}>账号</option>
+                  <option value="2" {if condition="$get['user_type'] == 2"}select{/if}>昵称</option>
+                </select>
+              </div>
+              <div class="layui-input-inline">
+                <input type="text" name="user_name" value="{$get.user_name}" class="layui-input" style="background-color:#eee;border:none;">
+              </div>
+              <button class="layui-btn layui-btn-normal" type="submit"><i class="layui-icon layui-icon-search"></i>搜索</button>
+            </form>
+          </div>
+      </crmblok>
+      <table class="layui-table">
+          <thead>
+            <tr>
+              <th width="25" align="center">
+                <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
+              </th>
+              <th align="center" style="width:80px;">序号</th>
+              <th align="center">账号</th>
+              <th align="center">昵称</th>
+              <th align="center">头像</th>
+              <th align="center">性别</th>
+              <th align="center">住址</th>
+              <th align="center">状态</th>
+              <th align="center">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+          {empty name="list"}
+            <tr align="center" style="height:500px;"><td colspan="9">暂无用户</td></tr>
+          {else}
+            {foreach $list as $l}
+              <tr>
+                <td>
+                  <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$l.id}'><i class="layui-icon">&#xe605;</i></div>
+                </td>
+                <td>{$l['id']}</td>
+                <td>{$l['user_name']}</td>
+                <td>{$l['user_nick']}</td>
+                <td>{if condition="!empty($l['user_face'])"}<img src="{$l['user_face']}" alt="">{/if}</td>
+                <td>{if condition="$l['user_sex'] == 0"}男{elseif condition="$l['user_sex'] == 1"}女{else}保密{/if}</td>
+                <td>{$l['user_city']}</td>
+                <td>
+                  {if condition="$l['user_status'] eq 1"}
+                    <span style="color:#8BC34A;">正常</span>
+                  {else}
+                    <span style="color:#E51C23;">封禁</span>
+                  {/if}
+                </td>
+                <td>
+                  <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="reset_password('{$l['id']}')">重置密码</button>
+                	<button class="layui-btn layui-btn-normal layui-btn-sm" onclick="crm_admin_show('编辑','{:url('users/edit',['id'=>$l['id']])}')">编辑</button>
+                  <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="del('{$l['id']}')">删除</button>
+                </td>
+              </tr>
+            {/foreach}
+          {/empty}
+          </tbody>
+        </table>
+      <div style="text-align: center">
+        <div class="laypage-main">
+          {$list->render()}
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <script>
+    function reset_password(id){
+      layer.confirm("您确定要重置密码 (默认密码：{$conf['pwd']}) 吗？",function(){
+  			$.ajax({
+  				url:"{:url('users/reset_password')}",
+  				data:{id:id},
+  				type:'post',
+  				success:function(data) {
+  					var status = JSON.parse(data);
+  					layer.msg(status.msg,{icon:status.icon,time:1000},function(){
+  						window.location.reload();
+  					});
+  				}
+  			});
+  		});
+    }
+  	function del(id){
+  		layer.confirm("您确定删除该用户吗？",function(){
+  			$.ajax({
+  				url:"{:url('users/del')}",
+  				data:{id:id},
+  				type:'post',
+  				success:function(data) {
+  					var status = JSON.parse(data);
+  					layer.msg(status.msg,{icon:status.icon,time:1000},function(){
+  						window.location.reload();
+  					});
+  				}
+  			});
+  		});
+  	}
+    function delAll(){
+      var datas = tableCheck.getData();
+      layer.confirm("确认删除选择的用户吗？",function(){
+        $.ajax({
+          url:"{:url('users/del')}",
+          data:{id:JSON.stringify(datas)},
+          type:'post',
+          success:function(data){
+            var status = JSON.parse(data);
+            layer.msg(status.msg,{icon:status.icon,time:1000},function(){
+              window.location.reload();
+            });
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

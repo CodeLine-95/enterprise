@@ -1,0 +1,45 @@
+{include file="public/header"}
+<div id="website" class="trans">
+    <div id="banner" class="banner relative fz0 swiper-container max-limit">
+        <div class="swiper-wrapper">
+            <div class="item swiper-slide relative over"> <img src="__TROOT__/index/img/63f6710629.jpg" class="max-w100 block trans relative"> </div>
+        </div>
+    </div>
+    <div class="blank20"></div>
+    <div id="products">
+        <div class="wrap1200">
+            <div class="products-list-title relative">
+                <div class="title fl">景点分类</div>
+<!--                <div class="sub-list-title">-->
+<!--                    <div class="sub-item fl "><a href="faguo/index.html">推荐</a></div>-->
+
+<!--                    <div class="sub-item fl "><a href="xinjiapo/index.html">热门</a></div>-->
+<!--                </div>-->
+            </div>
+            <div class="blank25"></div>
+            <div class="fz0">
+                {foreach $list as $l}
+                <div class='list-item inline-block '>
+                    <a href="{:url('scenic/detail',array('id'=>$l['id']))}"><img src="{$l['pic']}" width="100%" alt="{$l['name']}" /></a>
+                    <div class="list-item-wrap">
+                        <div class="list-item-name over"><a href="{:url('scenic/detail',array('id'=>$l['id']))}" title="{$l['name']}">{$l['name']}</a></div>
+                        <div class="list-item-brief over">{$l['desc']}</div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                {/foreach}
+            </div>
+            <div class="blank20"></div>
+            <div class="blank20 hide-992"></div>
+            <div class="blank20 hide-992"></div>
+            <div id="turn_page">
+                {$list->render()}
+            </div>
+            <div class="blank20"></div>
+            <div class="blank20 hide-992"></div>
+            <div class="blank20 hide-992"></div>
+            <div class="blank20 hide-992"></div>
+        </div>
+    </div>
+</div>
+{include file="public/footer"}

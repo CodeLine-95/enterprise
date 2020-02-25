@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+{include file="public:title"/}
+</head>
+<body>
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">系统设置</div>
+          <div class="layui-card-body" pad15>
+
+            <div class="layui-form" wid100 lay-filter="">
+              <div class="layui-form-item">
+                <label class="layui-form-label">系统名称</label>
+                <div class="layui-input-block">
+                  <input type="text" name="title" value="{$system['title']}" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">最大文件上传</label>
+                <div class="layui-input-inline" style="width: 80px;">
+                  <input type="text" name="maxfile" lay-verify="number" value="{$system['maxfile']}" class="layui-input">
+                </div>
+                <div class="layui-input-inline layui-input-company">KB</div>
+                <div class="layui-form-mid layui-word-aux">提示：1 M = 1024 KB</div>
+              </div>
+              <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">版权信息</label>
+                <div class="layui-input-block">
+                  <textarea name="copy" class="layui-textarea" style="resize: none;">{$system['copy']}</textarea>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">用户默认密码</label>
+                <div class="layui-input-block">
+                  <input type="text" name="pwd" value="{$system['pwd']}" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <button class="layui-btn" lay-submit lay-filter="set_website">确认保存</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    layui.use(['form','element'], function(){
+      var form = layui.form;
+      element = layui.element;
+      console.log(element)
+      form.on('submit(set_website)', function(data){
+          $.ajax({
+              type:'POST',
+              url:'{:url("conf/index")}',
+              data: {
+                  data:JSON.stringify(data.field)
+              },
+              success:function (data) {
+                  var status = JSON.parse(data);
+                  if (status.icon == 6){
+                      layer.msg(status.msg,{icon: status.icon,time:1000},function(){
+                          window.location.reload();
+                      });
+                  } else {
+                      layer.msg(status.msg,{icon: status.icon,time:1000},function(){
+                          window.location.reload();
+                      });
+                  }
+              }
+          });
+        return false;
+      });
+    });
+  </script>
+</body>
+</html>

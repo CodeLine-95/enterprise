@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+{include file="public:title"/}
+</head>
+<body>
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header"></div>
+          <div class="layui-form layui-card-body" pad15>
+            <input type="hidden" name="audit_id" value="{$publics['uid']}">
+            <input type="hidden" name="id" value="{$field.id}">
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="audit_state">执行人</label>
+              <div class="layui-input-block">
+                <select name="audit_state" id="audit_state">
+                  <option value="1">已通过</option>
+                  <option value="2">未通过</option>
+                </select>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                  <label class="layui-form-label"><button class="layui-btn" lay-submit lay-filter="audit">审核</button></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    layui.use(['form'], function(){
+      var form = layui.form;
+      form.on('submit(audit)', function(data){
+        $.post('{:url("demand/audit_state")}',data.field,function (res) {
+          if (res.icon == 6){
+            layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+              window.parent.location.reload();
+            });
+          } else {
+            layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+              window.location.reload();
+            });
+          }
+        },'json');
+        return false;
+      });
+    });
+  </script>
+</body>
+</html>

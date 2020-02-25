@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {include file="public:title"/}
+  <script type="text/javascript" src="__TROOT__/admin/js/layui-xtree.js"></script>
+</head>
+
+<body>
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-body" pad15>
+            <form class="layui-form" method="post">
+              <input type="hidden" name="id" value="{$field.id}">
+              <div class="layui-form-item">
+                <label class="layui-form-label" for="title">角色名称</label>
+                <div class="layui-input-block">
+                  <input type="text" id="title" name="title" value="{$field.title}" lay-verify="required" class="layui-input">
+                </div>
+              </div>
+
+              <div class="layui-form-item">
+                <label class="layui-form-label" for="remark">权限说明</label>
+                <div class="layui-input-block">
+                  <input type="text" id="remark" name="remark" value="{$field.remark}" lay-verify="required" class="layui-input">
+                </div>
+              </div>
+
+              <div class="layui-form-item">
+                <label for="rules" class="layui-form-label">权限分配</label>
+                <div class="layui-input-block">
+                  <div id="layui-xtree-checkbox" id="rules"></div>
+                </div>
+              </div>
+
+              <div class="layui-form-item">
+                <label for="status" class="layui-form-label">角色状态</label>
+                <div class="layui-input-block">
+                  <input type="radio" name="status" value="1" title="正常" {if condition="$field.status == 1" }checked{/if}> <input type="radio" name="status" value="0" title="停用" {if condition="$field.status == 0" }checked{/if}> </div> </div> <div
+                    class="layui-form-item">
+                  <div class="layui-input-block">
+                    <button class="layui-btn layui-btn-normal" lay-submit lay-filter="edit">编辑角色</button>
+                  </div>
+                </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {include file="public:footer"/}
+  <script type="text/javascript">
+    /*获取权限结构树*/
+    var json = '';
+    var id = $('input[name=id]').val();
+    $.ajax({
+      async: false,
+      url: "{:url('power/tree')}",
+      type: 'post',
+      data: {
+        id: id
+      },
+      success: function(data) {
+        json = data;
+      }
+    });
+    console.log(json)
+    layui.use(['form', 'layer'], function() {
+      $ = layui.jquery;
+      var form = layui.form,
+        layer = layui.layer;
+      /*实例化权限树*/
+      var xtree = new layuiXtree({
+        elem: 'layui-xtree-checkbox',
+        form: form,
+        data: json,
+        ckall: false,
+        isopen: true,
+        color: {
+          open: "#1E9FFF",
+          close: "#1E9FFF",
+          end: "#1E9FFF"
+        },
+        icon: { //图标样式 （选填）
+          open: "&#xe7a0;",
+          close: "&#xe622;",
+          end: "&#xe621;"
+        }
+      });
+      //监听提交
+      form.on('submit(edit)', function(data) {
+        var oCks = xtree.GetChecked();
+        var rule = [];
+        for (var i = 0; i < oCks.length; i++) {
+          var str = oCks[i].value;
+          var strArr = str.split('-');
+          var lastStr = strArr.join(',');
+          rule.push(lastStr);
+        }
+        var rules = rule.join(',').split(',');
+        $.ajax({
+          url: "{:url('power/edit')}",
+          type: "POST",
+          data: {
+            data: JSON.stringify(data.field),
+            rules: JSON.stringify(rules)
+          },
+          success: function(data) {
+            var message = JSON.parse(data);
+            if (message.icon == 6) {
+              layer.msg(message.msg, {
+                icon: message.icon,
+                time: 1000
+              }, function() {
+                window.parent.location.reload();
+              });
+            } else {
+              layer.msg(message.msg, {
+                icon: message.icon,
+                time: 1000
+              });
+            }
+          }
+        });
+        return false;
+      });
+    });
+  </script>
+</body>
+
+</html>

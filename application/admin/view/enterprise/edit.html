@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {include file="public:title"/}
+  <style media="screen">
+    .layui-form-select{
+      width: 165px;
+    }
+    .layui-form-item .layui-input-inline{
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md12">
+      <div class="layui-card">
+        <div class="layui-card-header">编辑企业</div>
+        <div class="layui-form layui-card-body" pad15>
+          <input type="hidden" name="id" value="{$field.id}">
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="name">企业名称</label>
+            <div class="layui-input-block">
+              <input type="text" name="name" value="{$field.name}" id="name" lay-verify="required" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="desc">简介</label>
+            <div class="layui-input-block">
+              <textarea name="desc" id="desc" class="layui-textarea">{$field.desc}</textarea>
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="address">企业地址</label>
+            <div class="layui-input-block">
+              <input type="text" name="address" value="{$field.address}" id="address" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="tel_name">联系人</label>
+            <div class="layui-input-block">
+              <input type="text" name="tel_name" value="{$field.tel_name}" id="tel_name" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="tel">联系方式</label>
+            <div class="layui-input-block">
+              <input type="text" name="tel" value="{$field.tel}" id="tel" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="corporation">企业法人</label>
+            <div class="layui-input-block">
+              <input type="text" name="corporation" value="{$field.corporation}" id="corporation" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">签约状态</label>
+            <div class="layui-input-inline">
+              <input type="radio" name="status" title="合作中" value="1" {if condition="$field.status == 1"}checked{/if} class="layui-input">
+              <input type="radio" name="status" title="已解约" value="0" {if condition="$field.status == 0"}checked{/if} class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <label class="layui-form-label"><button class="layui-btn" lay-submit lay-filter="edit">编辑</button></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  layui.use(['form','upload','laydate','layedit'], function(){
+    var form = layui.form;
+    form.on('submit(edit)', function(data){
+      $.post('{:url("enterprise/edit")}',data.field,function (res) {
+        if (res.icon == 6){
+          layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+            window.parent.location.reload();
+          });
+        } else {
+          layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+            window.location.reload();
+          });
+        }
+      },'json');
+      return false;
+    });
+  });
+</script>
+</body>
+</html>

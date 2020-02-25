@@ -1,0 +1,10 @@
+@charset "utf-8";
+#header #menu #nav .nav-item .item-a {
+	color: #333333 !important;
+}
+#header #menu #nav .nav-item .item-a.on, #header #menu #nav .nav-item:hover .item-a {
+	color: #009FE3 !important;
+}
+#header #menu #nav .nav-item .item-a.on, #header #menu #nav .nav-item:hover .item-a, #header #menu-btn:hover {
+	color: #009FE3 !important;
+}

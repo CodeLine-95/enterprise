@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {include file="public:title"/}
+  <style media="screen">
+    .layui-form-select{
+      width: 165px;
+    }
+    .layui-form-item .layui-input-inline{
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md12">
+      <div class="layui-card">
+        <div class="layui-card-header">添加需求</div>
+        <div class="layui-form layui-card-body" pad15>
+          <input type="hidden" name="uid" value="{$publics['uid']}">
+          <input type="hidden" name="id" value="{$field.id}">
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="title">需求标题</label>
+            <div class="layui-input-block">
+              <input type="text" name="title" value="{$field.title}" id="title" lay-verify="required" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="content">需求内容</label>
+            <div class="layui-input-block">
+              <textarea name="contnet" id="content" style="display: none;">{$field.content}</textarea>
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="remarks">需求备注</label>
+            <div class="layui-input-block">
+              <textarea name="remarks" id="remarks" class="layui-textarea">{$field.remarks}</textarea>
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="enclosure">需求附件</label>
+            <div class="layui-input-block">
+              <button type="button" style="float:left;margin-right:1%;" id="enclosure" class="layui-btn"><i class="layui-icon">&#xe67c;</i>上传</button>
+              {if condition="empty($field.enclosure)"}
+              <input type="text" style="width:53%;float:left;display:none;background-color:#dcdcdc;" readonly name="enclosure" class="layui-input">
+              {else}
+              <input type="text" value="{$field.enclosure}" style="width:53%;float:left;display:block;background-color:#dcdcdc;" readonly name="enclosure" class="layui-input">
+              {/if}
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="eid">执行人</label>
+            <div class="layui-input-block">
+              <select name="eid" id="eid">
+                {foreach $admin as $a}
+                <option value="{$a.id}" {if condition="$field.eid == $a.id"}selected{/if}>{$a.user_name}</option>
+                {/foreach}
+              </select>
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">长短期</label>
+            <div class="layui-input-inline">
+              <input type="radio" name="shlote" title="短期" value="1" {if condition="$field.shlote == 1"}checked{/if} class="layui-input">
+              <input type="radio" name="shlote" title="长期" value="0" {if condition="$field.shlote == 0"}checked{/if} class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">需求状态</label>
+            <div class="layui-input-inline">
+              <input type="radio" name="status" title="关闭" value="1" {if condition="$field.status == 1"}checked{/if} class="layui-input">
+              <input type="radio" name="status" title="开启" value="0" {if condition="$field.status == 0"}checked{/if} class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <label class="layui-form-label"><button class="layui-btn" lay-submit lay-filter="edit">编辑</button></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  layui.use(['form','upload','laydate','layedit'], function(){
+    var form = layui.form,upload = layui.upload,layedit = layui.layedit;
+    //多图上传实例
+    upload.render({
+      elem: '#enclosure',
+      url: '{:url("AjaxAction/upload")}',
+      accept:"file",
+      auto:true,
+      size:{$conf['maxfile']},
+      drag:false,
+      before: function(obj) {
+        layer.msg('上传中...', {icon: 16,shade: 0.01,time: 0})
+      },
+      done: function(res) {
+        layer.close(layer.msg('上传成功！'));
+        $('input[name=enclosure]').val(res.data);
+        $('input[name=enclosure]').show();
+      }
+      ,error: function(){
+        layer.msg('上传错误！');
+      }
+    });
+    var index = layedit.build('content', {
+      tool: [
+        'strong' //加粗
+        ,'italic' //斜体
+        ,'underline' //下划线
+        ,'del' //删除线
+        ,'|' //分割线
+        ,'left' //左对齐
+        ,'center' //居中对齐
+        ,'right' //右对齐
+        ,'link' //超链接
+        ,'unlink' //清除链接
+        ,'face' //表情
+        ,'help' //帮助
+      ]
+    });
+    form.on('submit(edit)', function(data){
+      data.field.content = layedit.getContent(index);
+      $.post('{:url("demand/edit")}',data.field,function (res) {
+        if (res.icon == 6){
+          layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+            window.parent.location.reload();
+          });
+        } else {
+          layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+            window.location.reload();
+          });
+        }
+      },'json');
+      return false;
+    });
+  });
+</script>
+</body>
+</html>

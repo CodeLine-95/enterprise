@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {include file="public:title"/}
+</head>
+
+<body>
+
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-card">
+          <div class="layui-card-header">添加规则</div>
+          <div class="layui-card-body" pad15>
+            <form class="layui-form" method="post">
+              <div class="layui-form-item">
+                <label for="cate" class="layui-form-label">上级</label>
+                <div class="layui-input-inline">
+                  <select id="cate" name="pid" class="valid">
+                    <option value="0" selected>顶级</option>
+                    {foreach $rules as $rule}
+                    <option value="{$rule.id}">{$rule._name}</option>
+                    {/foreach}
+                  </select>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label" for="title">规则名称</label>
+                <div class="layui-input-block">
+                  <input type="text" id="title" name="name" lay-verify="required" class="layui-input">
+                </div>
+              </div>
+
+              <div class="layui-form-item">
+                <label class="layui-form-label" for="url">规则节点</label>
+                <div class="layui-input-block">
+                  <input name="url" style="width: 50%;" id="url" type="text" lay-verify="required" autocomplete="off" class="layui-input layui-input-inline">
+                  <span style="line-height: 38px;color:red;"><i class="layui-icon" style="font-size:14px;margin-right: 5px;">&#xe702;</i>如：admin/user/adduser (一级节点添加“#”即可)</span>
+                </div>
+              </div>
+
+              <div class="layui-form-item">
+                <label for="sort" class="layui-form-label">菜单排序</label>
+                <div class="layui-input-block">
+                  <input type="text" id="sort" name="sort" value="0" autocomplete="off" class="layui-input layui-input-inline">
+                </div>
+              </div>
+
+              <div class="layui-form-item">
+                <label class="layui-form-label">规则状态</label>
+                <div class="layui-input-block">
+                  <input type="radio" name="status" value="1" title="正常" checked>
+                  <input type="radio" name="status" value="0" title="停用">
+                </div>
+              </div>
+
+              <div class="layui-form-item">
+                <div class="layui-input-block">
+                  <button class="layui-btn" lay-submit lay-filter="poweradd">添加规则</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {include file="public:footer"/}
+  <script type="text/javascript">
+    layui.use(['form'], function() {
+      var form = layui.form;
+      form.on('submit(poweradd)', function(data) {
+        $.ajax({
+          url: "{:url('power/poweradd')}",
+          type: 'POST',
+          data: {
+            data: JSON.stringify(data.field)
+          },
+          success: function(data) {
+            var message = JSON.parse(data);
+            if (message.icon == 6) {
+              layer.msg(message.msg, {
+                icon: message.icon,
+                time: 1000
+              }, function() {
+                window.parent.location.reload();
+              });
+            } else {
+              layer.msg(message.msg, {
+                icon: message.icon,
+                time: 1000
+              });
+            }
+          }
+        });
+        return false;
+      })
+    });
+  </script>
+</body>
+
+</html>

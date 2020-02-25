@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {include file="public:title"/}
+  <style media="screen">
+    .layui-form-select{
+      width: 165px;
+    }
+    .layui-form-item .layui-input-inline{
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md12">
+      <div class="layui-card">
+        <div class="layui-card-header">编辑设备</div>
+        <div class="layui-form layui-card-body" pad15>
+          <input type="hidden" name="id" value="{$field.id}">
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="name">设备名称</label>
+            <div class="layui-input-block">
+              <input type="text" name="name" value="{$field.name}" id="name" lay-verify="required" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="type">设备类型</label>
+            <div class="layui-input-block">
+              <input type="text" name="type" value="{$field.type}" id="type" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label" for="desc">设备详情</label>
+            <div class="layui-input-block">
+              <textarea name="desc" id="desc" class="layui-textarea">{$field.desc}</textarea>
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <label class="layui-form-label"><button class="layui-btn" lay-submit lay-filter="edit">编辑</button></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  layui.use(['form','upload','laydate','layedit'], function(){
+    var form = layui.form;
+    form.on('submit(edit)', function(data){
+      $.post('{:url("device/edit")}',data.field,function (res) {
+        if (res.icon == 6){
+          layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+            window.parent.location.reload();
+          });
+        } else {
+          layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+            window.location.reload();
+          });
+        }
+      },'json');
+      return false;
+    });
+  });
+</script>
+</body>
+</html>
