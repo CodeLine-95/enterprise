@@ -2,44 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="810d273f-84a9-487b-a6bc-d53424c3c98b" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/application/api/behavior/CrossDomain.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/api/model/Enterprise.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Base.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Guide.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/News.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Scenic.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/controller/Users.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/model/Cate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/model/Comment.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/model/Guide.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/model/News.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/model/Orders.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/model/Product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/model/Scenic.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/model/Users.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/guide/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/guide/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/index/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/login/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/login/zhuce.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/news/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/news/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/product/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/product/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/public/footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/public/header.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/scenic/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/scenic/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/users/orders.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/users/password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/users/users.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/layuiadmin/style/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/layuiadmin/style/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/Common.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Common.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,19 +62,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/api/model" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/admin/view/orders" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/application/api/model" />
       <recent name="$PROJECT_DIR$/application/admin/view/demand" />
       <recent name="$PROJECT_DIR$/application/admin/view" />
       <recent name="$PROJECT_DIR$/application/admin/model" />
       <recent name="$PROJECT_DIR$/application/admin/view/expert" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/application/admin/view/orders" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -163,7 +128,7 @@
       <workItem from="1582983483053" duration="3199000" />
       <workItem from="1583069396477" duration="29000" />
       <workItem from="1583070168867" duration="2255000" />
-      <workItem from="1583116179673" duration="1339000" />
+      <workItem from="1583116179673" duration="3774000" />
     </task>
     <task id="LOCAL-00001" summary="增加api模块：主控制器api和登录api">
       <created>1583117169135</created>
@@ -186,7 +151,21 @@
       <option name="project" value="LOCAL" />
       <updated>1583117557617</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="调整框架配置">
+      <created>1583117615164</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583117615164</updated>
+    </task>
+    <task id="LOCAL-00005" summary="调整框架配置">
+      <created>1583117691726</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1583117691726</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,10 +202,10 @@
     </state>
     <state x="599" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1582641348673" />
     <state x="600" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/43.23.1637.1027@43.23.1637.1027" timestamp="1581148360498" />
-    <state x="465" y="136" key="CommitChangelistDialog2" timestamp="1583117623383">
+    <state x="465" y="136" key="CommitChangelistDialog2" timestamp="1583117691255">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
-    <state x="465" y="136" key="CommitChangelistDialog2/41.23.1639.1027@41.23.1639.1027" timestamp="1583117623383" />
+    <state x="465" y="136" key="CommitChangelistDialog2/41.23.1639.1027@41.23.1639.1027" timestamp="1583117691255" />
     <state x="145" y="123" width="1435" height="827" key="DiffContextDialog" timestamp="1583117442713">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
@@ -239,10 +218,10 @@
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
     <state x="681" y="467" key="NewPhpFileDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1582986436635" />
-    <state x="462" y="276" key="Vcs.Push.Dialog.v2" timestamp="1583117655802">
+    <state x="462" y="276" key="Vcs.Push.Dialog.v2" timestamp="1583117694860">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
-    <state x="462" y="276" key="Vcs.Push.Dialog.v2/41.23.1639.1027@41.23.1639.1027" timestamp="1583117655802" />
+    <state x="462" y="276" key="Vcs.Push.Dialog.v2/41.23.1639.1027@41.23.1639.1027" timestamp="1583117694860" />
     <state x="145" y="123" width="1435" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583117534709">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
