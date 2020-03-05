@@ -5,4 +5,8 @@
 
 旅游项目，基于**ThinkPHP5.0**开发
 
-后台：**layuiAdmin**
+后台：**layuiAdmin + ThinkkPHP5.0**
+
+api：**ThinkPHP5.0**
+
+前台：**vue + THinkphp5.0**

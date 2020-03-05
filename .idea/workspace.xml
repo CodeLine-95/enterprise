@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="810d273f-84a9-487b-a6bc-d53424c3c98b" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/application/api/model/Cate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/api/model/News.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/controller/Common.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Common.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +132,7 @@
       <workItem from="1583217458431" duration="36000" />
       <workItem from="1583241711900" duration="2118000" />
       <workItem from="1583289901859" duration="708000" />
-      <workItem from="1583413537941" duration="3882000" />
+      <workItem from="1583413537941" duration="4800000" />
     </task>
     <task id="LOCAL-00001" summary="增加api模块：主控制器api和登录api">
       <created>1583117169135</created>
@@ -192,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583417471846</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="接口：新增：新闻api，栏目api">
+      <created>1583418627744</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1583418627744</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +222,8 @@
     <MESSAGE value="增加企业：列表api和详情api" />
     <MESSAGE value="增加注册登录api" />
     <MESSAGE value="后台：增加栏目模块，调整活动模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="后台：增加栏目模块，调整活动模块" />
+    <MESSAGE value="接口：新增：新闻api，栏目api" />
+    <option name="LAST_COMMIT_MESSAGE" value="接口：新增：新闻api，栏目api" />
   </component>
   <component name="WindowStateProjectService">
     <state x="462" y="202" key="#Notifications" timestamp="1583117408692">
@@ -234,10 +240,10 @@
     </state>
     <state x="599" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1583416506694" />
     <state x="600" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/43.23.1637.1027@43.23.1637.1027" timestamp="1581148360498" />
-    <state x="465" y="136" key="CommitChangelistDialog2" timestamp="1583417471511">
+    <state x="427" y="115" key="CommitChangelistDialog2" timestamp="1583418627229">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
-    <state x="465" y="136" key="CommitChangelistDialog2/41.23.1639.1027@41.23.1639.1027" timestamp="1583417471511" />
+    <state x="427" y="115" key="CommitChangelistDialog2/41.23.1639.1027@41.23.1639.1027" timestamp="1583418627229" />
     <state x="145" y="123" width="1435" height="827" key="DiffContextDialog" timestamp="1583117442713">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
@@ -250,14 +256,18 @@
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
     <state x="681" y="467" key="NewPhpFileDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1583418441847" />
-    <state x="462" y="276" key="Vcs.Push.Dialog.v2" timestamp="1583417474794">
+    <state x="462" y="276" key="Vcs.Push.Dialog.v2" timestamp="1583418629683">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
-    <state x="462" y="276" key="Vcs.Push.Dialog.v2/41.23.1639.1027@41.23.1639.1027" timestamp="1583417474794" />
+    <state x="462" y="276" key="Vcs.Push.Dialog.v2/41.23.1639.1027@41.23.1639.1027" timestamp="1583418629683" />
     <state x="145" y="123" width="1435" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583117534709">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
     <state x="145" y="123" width="1435" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1583117534709" />
+    <state x="644" y="460" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583418943896">
+      <screen x="41" y="23" width="1639" height="1027" />
+    </state>
+    <state x="644" y="460" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/41.23.1639.1027@41.23.1639.1027" timestamp="1583418943896" />
     <state x="145" y="123" width="1435" height="827" key="dock-window-1" timestamp="1581856368337">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
@@ -270,10 +280,10 @@
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
     <state x="643" y="335" key="git4idea.merge.GitMergeDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1583117428353" />
-    <state x="527" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1582617148209">
+    <state x="527" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1583419460536">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
-    <state x="527" y="250" width="670" height="676" key="search.everywhere.popup/41.23.1639.1027@41.23.1639.1027" timestamp="1582617148209" />
+    <state x="527" y="250" width="670" height="676" key="search.everywhere.popup/41.23.1639.1027@41.23.1639.1027" timestamp="1583419460536" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
