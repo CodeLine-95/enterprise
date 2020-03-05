@@ -2,6 +2,8 @@
 namespace app\api\controller;
 
 use app\api\Model\Enterprise;
+use app\api\model\Gain;
+use app\api\model\GainVideo;
 use think\Controller;
 use app\api\model\Expert;
 use think\Log;
@@ -9,7 +11,7 @@ use think\Log;
 class Common extends Controller
 {
     /**
-     * 导游信息含分页 [get]
+     * 专家信息含分页 [get]
      * @return \think\response\Json
      */
     public function expertList(){
@@ -49,14 +51,26 @@ class Common extends Controller
     }
 
     /**
-     * 导游信息详情  [get]
+     *专家信息详情  [get]
      * @return \think\response\Json
      */
     public function expertDetail(){
         try {
             if (request()->isGet()){
                 $id = input('id');
-                $expertDetail = (new Expert())->field(['*','from_unixtime(create_t) create_t'])->where(['id'=>$id])->find()->toArray();
+                $expertDetail = (new Expert())
+                    ->field(['*','from_unixtime(create_t) create_t'])
+                    ->where(['id'=>$id])->find()->toArray();
+                $gainVideo = (new GainVideo())->where(['expert_id'=>$expertDetail['id']])->find();
+                if ($gainVideo){
+                    $expertDetail['video_name'] = $gainVideo['name'];
+                    $expertDetail['video'] = $gainVideo['video'];
+                    $gain = (new Gain())->where(['id'=>$gainVideo['gain_id']])->find()->toArray();
+                    if ($gain) {
+                        $expertDetail['gain_name'] = $gain['name'];
+                        $expertDetail['gain_face'] = $gain['face'];
+                    }
+                }
                 $json = [
                     'codeMsg' => 'SUCCESS',
                     'code' => 200,
@@ -127,6 +141,51 @@ class Common extends Controller
                     'codeMsg' => 'SUCCESS',
                     'code' => 200,
                     'data' => $EnterpriseDetail
+                ];
+                return json($json);
+            } else {
+                return json(['codeMsg' => '请求错误', 'code' => 400]);
+            }
+        }catch (\Exception $e){
+            Log::error($e);
+            return json(['codeMsg'=>$e->getMessage(),'code'=>$e->getCode()]);
+        }
+    }
+
+    /**
+     * 成果视频  [get]
+     * @return \think\response\Json
+     */
+    public function gainVideoList(){
+        try {
+            if (request()->isGet()) {
+                $params = request()->get();
+                if (!isset($params['page'])) {
+                    $params['page'] = 1;
+                }
+                if (!isset($params['pageSize'])) {
+                    $params['pageSize'] = 10;
+                }
+                $expertCount = (new Expert())->count();
+                $lastPage = ceil($expertCount / $params['pageSize']);
+                if ($params['page'] > $lastPage) {
+                    $params['page'] = $lastPage;
+                }
+                $pageOffset = ($params['page'] - 1) * $params['pageSize'];
+                $GainVideo = (new GainVideo())
+                    ->alias('v')
+                    ->field(['v.*','g.name gain_name','e.name expert_name'])
+                    ->join('crm_gain g','v.gain_id = g.id')
+                    ->join('crm_expert e','v.expert_id = e.id')
+                    ->limit($pageOffset, $params['pageSize'])->select()->toArray();
+                $json = [
+                    'codeMsg' => 'SUCCESS',
+                    'code' => 200,
+                    'totalCount' => $expertCount,
+                    'page' => $params['page'],
+                    'totalPage' => $lastPage,
+                    'pageSize' => $params['pageSize'],
+                    'data' => $GainVideo
                 ];
                 return json($json);
             } else {
