@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:87:"/Applications/MAMP/htdocs/bbbbbb/public/../application/admin/view/goods_cate/lists.html";i:1582119620;s:73:"/Applications/MAMP/htdocs/bbbbbb/application/admin/view/public/title.html";i:1581519893;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:73:"/www/wwwroot/bbb.flv.pet/public/../application/admin/view/cate/lists.html";i:1583419213;s:65:"/www/wwwroot/bbb.flv.pet/application/admin/view/public/title.html";i:1583419213;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,12 +71,11 @@
       <crmblok>
           <div style="position: relative;">
             <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-            <button class="layui-btn layui-btn-normal" onclick="crm_admin_show('添加','<?php echo url('GoodsCate/add'); ?>')"><i class="layui-icon">&#xe608;</i>添加</button>
+            <button class="layui-btn layui-btn-normal" onclick="crm_admin_show('添加','<?php echo url('cate/add'); ?>')"><i class="layui-icon">&#xe608;</i>添加</button>
             <form class="layui-form" method="get" style="display:inline-block;position: absolute;right: 0;">
               <div class="layui-input-inline">
                 <select name="type">
                   <option value="1" <?php if($get['type'] == 1): ?>select<?php endif; ?>>名称</option>
-<!--                  <option value="2">昵称</option>-->
                 </select>
               </div>
               <div class="layui-input-inline">
@@ -94,25 +93,21 @@
               </th>
               <th align="center" style="width:80px;">序号</th>
               <th align="center">名称</th>
-              <th align="center">区别</th>
               <th align="center">操作</th>
             </tr>
           </thead>
           <tbody>
           <?php if(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty())): ?>
-            <tr align="center" style="height:500px;"><td colspan="5">暂无类型</td></tr>
+            <tr align="center" style="height:500px;"><td colspan="4">暂无栏目</td></tr>
           <?php else: foreach($list as $l): ?>
               <tr>
                 <td>
                   <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='<?php echo $l['id']; ?>'><i class="layui-icon">&#xe605;</i></div>
                 </td>
                 <td><?php echo $l['id']; ?></td>
-                <td><?php echo $l['cate_name']; ?></td>
+                <td><?php echo $l['name']; ?></td>
                 <td>
-                  <?php switch($l['cate_type']): case "1": ?>国内汽车<?php break; case "2": ?>国外汽车<?php break; endswitch; ?>
-                </td>
-                <td>
-                	<button class="layui-btn layui-btn-normal layui-btn-sm" onclick="crm_admin_show('编辑','<?php echo url('GoodsCate/edit',['id'=>$l['id']]); ?>')">编辑</button>
+                	<button class="layui-btn layui-btn-normal layui-btn-sm" onclick="crm_admin_show('编辑','<?php echo url('cate/edit',['id'=>$l['id']]); ?>')">编辑</button>
                   <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="del('<?php echo $l['id']; ?>')">删除</button>
                 </td>
               </tr>
@@ -130,19 +125,18 @@
   <script>
   	function del(id)
   	{
-  		layer.confirm("您确定删除该商品吗？",function(){
-  		  $.post("<?php echo url('GoodsCate/del'); ?>",{id:id},function (res) {
+  		layer.confirm("您确定删除该栏目吗？",function(){
+  		  $.post("<?php echo url('cate/del'); ?>",{id:id},function (res) {
             layer.msg(res.msg,{icon:res.icon,time:1000},function(){
               window.location.reload();
             });
           },'json');
   		});
   	}
-    function delAll()
-    {
+    function delAll() {
       var datas = tableCheck.getData();
-      layer.confirm("确认删除选择的商品吗？",function(){
-        $.post("<?php echo url('GoodsCate/del'); ?>",{id:JSON.stringify(datas)},function (res) {
+      layer.confirm("确认删除选择的栏目吗？",function(){
+        $.post("<?php echo url('cate/del'); ?>",{id:JSON.stringify(datas)},function (res) {
           layer.msg(res.msg,{icon:res.icon,time:1000},function(){
             window.location.reload();
           });

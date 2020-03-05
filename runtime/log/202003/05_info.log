@@ -1,0 +1,266 @@
+---------------------------------------------------------------
+[2020-03-05T22:43:13+08:00] 221.220.244.169 GET bbb.flv.pet/admin/index/index.html
+[ info ] [ LANG ] /www/wwwroot/bbb.flv.pet/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=16eba476663616-06994ac3ea344a-3964720e-1aeaa0-16eba4766665f2; PHPSESSID=4v7o14hqrr91etn9qfoesfot5d',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,mt;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://bbb.flv.pet/admin/login/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'bbb.flv.pet',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CrossDomain @module_init [ RunTime:0.000334s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/bbb.flv.pet/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/bbb.flv.pet/public/../application/admin/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'conf',
+  2 => 'url',
+  3 => 'system',
+  4 => 'publics',
+  5 => 'childMenu',
+) ]
+[ info ] [ LOG ] INIT file
+---------------------------------------------------------------
+[2020-03-05T22:43:13+08:00] 221.220.244.169 GET bbb.flv.pet/admin/index/console.html
+[ info ] [ LANG ] /www/wwwroot/bbb.flv.pet/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'console',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=16eba476663616-06994ac3ea344a-3964720e-1aeaa0-16eba4766665f2; PHPSESSID=4v7o14hqrr91etn9qfoesfot5d',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,mt;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://bbb.flv.pet/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'bbb.flv.pet',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CrossDomain @module_init [ RunTime:0.000326s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->console[ /www/wwwroot/bbb.flv.pet/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/bbb.flv.pet/public/../application/admin/view/index/console.html [ array (
+  0 => 'user',
+  1 => 'conf',
+  2 => 'url',
+  3 => 'system',
+  4 => 'publics',
+  5 => 'childMenu',
+  6 => 'newsCount',
+  7 => 'UsersCount',
+) ]
+[ info ] [ LOG ] INIT file
+---------------------------------------------------------------
+[2020-03-05T22:43:16+08:00] 221.220.244.169 GET bbb.flv.pet/admin/cate/lists.html
+[ info ] [ LANG ] /www/wwwroot/bbb.flv.pet/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'cate',
+    2 => 'lists',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=16eba476663616-06994ac3ea344a-3964720e-1aeaa0-16eba4766665f2; PHPSESSID=4v7o14hqrr91etn9qfoesfot5d',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,mt;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://bbb.flv.pet/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'bbb.flv.pet',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CrossDomain @module_init [ RunTime:0.000335s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Cate->lists[ /www/wwwroot/bbb.flv.pet/application/admin/controller/Cate.php ]
+[ info ] [ VIEW ] /www/wwwroot/bbb.flv.pet/public/../application/admin/view/cate/lists.html [ array (
+  0 => 'user',
+  1 => 'conf',
+  2 => 'url',
+  3 => 'system',
+  4 => 'publics',
+  5 => 'childMenu',
+  6 => 'list',
+  7 => 'get',
+) ]
+[ info ] [ LOG ] INIT file
+---------------------------------------------------------------
+[2020-03-05T22:43:30+08:00] 221.220.244.169 GET bbb.flv.pet/api/common/newsList
+[ info ] [ LANG ] /www/wwwroot/bbb.flv.pet/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'common',
+    2 => 'newsList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=16eba476663616-06994ac3ea344a-3964720e-1aeaa0-16eba4766665f2; PHPSESSID=4v7o14hqrr91etn9qfoesfot5d',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,mt;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'bbb.flv.pet',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CrossDomain @module_init [ RunTime:0.000347s ]
+[ info ] [ RUN ] app\api\controller\Common->newsList[ /www/wwwroot/bbb.flv.pet/application/api/controller/Common.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT file
+---------------------------------------------------------------
+[2020-03-05T23:04:32+08:00] 221.220.244.169 GET bbb.flv.pet/admin
+[ info ] [ LANG ] /www/wwwroot/bbb.flv.pet/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=16eba476663616-06994ac3ea344a-3964720e-1aeaa0-16eba4766665f2; PHPSESSID=4v7o14hqrr91etn9qfoesfot5d',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,mt;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'bbb.flv.pet',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CrossDomain @module_init [ RunTime:0.000330s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ /www/wwwroot/bbb.flv.pet/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/bbb.flv.pet/public/../application/admin/view/index/index.html [ array (
+  0 => 'user',
+  1 => 'conf',
+  2 => 'url',
+  3 => 'system',
+  4 => 'publics',
+  5 => 'childMenu',
+) ]
+[ info ] [ LOG ] INIT file
+---------------------------------------------------------------
+[2020-03-05T23:04:32+08:00] 221.220.244.169 GET bbb.flv.pet/admin/index/console.html
+[ info ] [ LANG ] /www/wwwroot/bbb.flv.pet/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'console',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'UM_distinctid=16eba476663616-06994ac3ea344a-3964720e-1aeaa0-16eba4766665f2; PHPSESSID=4v7o14hqrr91etn9qfoesfot5d',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,mt;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://bbb.flv.pet/admin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'bbb.flv.pet',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CrossDomain @module_init [ RunTime:0.000376s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->console[ /www/wwwroot/bbb.flv.pet/application/admin/controller/Index.php ]
+[ info ] [ VIEW ] /www/wwwroot/bbb.flv.pet/public/../application/admin/view/index/console.html [ array (
+  0 => 'user',
+  1 => 'conf',
+  2 => 'url',
+  3 => 'system',
+  4 => 'publics',
+  5 => 'childMenu',
+  6 => 'newsCount',
+  7 => 'UsersCount',
+) ]
+[ info ] [ LOG ] INIT file

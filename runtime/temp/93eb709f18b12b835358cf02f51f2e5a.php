@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"/www/wwwroot/ccc.flv.pet/public/../application/admin/view/index/console.html";i:1582209110;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:76:"/www/wwwroot/bbb.flv.pet/public/../application/admin/view/index/console.html";i:1583419213;}*/ ?>
 
 
 <!DOCTYPE html>
@@ -25,25 +25,9 @@
       </div>
       <div class="layui-col-sm6 layui-col-md3">
           <div class="layui-card">
-              <div class="layui-card-header">评论</div>
-              <div class="layui-card-body  ">
-                  <p class="layuiadmin-big-font"><?php echo $CommentCount; ?></p>
-              </div>
-          </div>
-      </div>
-      <div class="layui-col-sm6 layui-col-md3">
-          <div class="layui-card">
               <div class="layui-card-header">用户</div>
               <div class="layui-card-body  ">
                   <p class="layuiadmin-big-font"><?php echo $UsersCount; ?></p>
-              </div>
-          </div>
-      </div>
-      <div class="layui-col-sm6 layui-col-md3">
-          <div class="layui-card">
-              <div class="layui-card-header">商品</div>
-              <div class="layui-card-body  ">
-                  <p class="layuiadmin-big-font"><?php echo $ProductCount; ?></p>
               </div>
           </div>
       </div>

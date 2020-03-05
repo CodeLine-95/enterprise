@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"/www/wwwroot/ccc.flv.pet/public/../application/admin/view/index/index.html";i:1582124687;s:65:"/www/wwwroot/ccc.flv.pet/application/admin/view/public/title.html";i:1581519893;s:66:"/www/wwwroot/ccc.flv.pet/application/admin/view/public/footer.html";i:1566482652;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"/www/wwwroot/bbb.flv.pet/public/../application/admin/view/index/index.html";i:1583419213;s:65:"/www/wwwroot/bbb.flv.pet/application/admin/view/public/title.html";i:1583419213;s:66:"/www/wwwroot/bbb.flv.pet/application/admin/view/public/footer.html";i:1583419213;}*/ ?>
 <!DOCTYPE html>
 <html>
 

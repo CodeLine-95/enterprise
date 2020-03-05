@@ -15,11 +15,11 @@ return [
     // 服务器地址
     'hostname'        => '127.0.0.1',
     // 数据库名
-    'database'        => 'bbbbbb',
+    'database'        => 'bbb_flv_pet',
     // 用户名
-    'username'        => 'root',
+    'username'        => 'bbb_flv_pet',
     // 密码
-    'password'        => 'root',
+    'password'        => 'NDb2sFtszBjfNX34',
     // 端口
     'hostport'        => '',
     // 连接dsn
