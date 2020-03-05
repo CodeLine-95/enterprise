@@ -1,9 +1,11 @@
 <?php
 namespace app\api\controller;
 
+use app\api\model\Cate;
 use app\api\Model\Enterprise;
 use app\api\model\Gain;
 use app\api\model\GainVideo;
+use app\api\model\News;
 use think\Controller;
 use app\api\model\Expert;
 use think\Log;
@@ -190,6 +192,111 @@ class Common extends Controller
                 return json($json);
             } else {
                 return json(['codeMsg' => '请求错误', 'code' => 400]);
+            }
+        }catch (\Exception $e){
+            Log::error($e);
+            return json(['codeMsg'=>$e->getMessage(),'code'=>$e->getCode()]);
+        }
+    }
+
+    /**
+     * 新闻列表  [get]
+     * @return \think\response\Json
+     */
+    public function newsList(){
+        try {
+            if (request()->isGet()) {
+                $params = request()->get();
+                if (!isset($params['page'])) {
+                    $params['page'] = 1;
+                }
+                if (!isset($params['pageSize'])) {
+                    $params['pageSize'] = 10;
+                }
+                $expertCount = (new Expert())->count();
+                $lastPage = ceil($expertCount / $params['pageSize']);
+                if ($params['page'] > $lastPage) {
+                    $params['page'] = $lastPage;
+                }
+                $where = [];
+                if (isset($params['cate_id']) && !empty($params['cate_id'])){
+                    $where = ['n.cate_id'=>$params['cate_id']];
+                }
+                $pageOffset = ($params['page'] - 1) * $params['pageSize'];
+                $NewsList = (new News())
+                    ->alias('n')
+                    ->field(['n.*','u.user_name','c.name cate_name','from_unixtime(n.create_t) create_t','from_unixtime(n.update_t) update_t'])
+                    ->join('crm_users u','n.uid = u.id')
+                    ->join('crm_cate c','n.cate_id = c.id')
+                    ->where($where)
+                    ->limit($pageOffset, $params['pageSize'])->select()->toArray();
+                $json = [
+                    'codeMsg' => 'SUCCESS',
+                    'code' => 200,
+                    'totalCount' => $expertCount,
+                    'page' => $params['page'],
+                    'totalPage' => $lastPage,
+                    'pageSize' => $params['pageSize'],
+                    'data' => $NewsList
+                ];
+                return json($json);
+            } else {
+                return json(['codeMsg' => '请求错误', 'code' => 400]);
+            }
+        }catch (\Exception $e){
+            Log::error($e);
+            return json(['codeMsg'=>$e->getMessage(),'code'=>$e->getCode()]);
+        }
+    }
+
+    /**
+     * 新闻详情  [get]
+     * @return \think\response\Json
+     */
+    public function NewsDetail(){
+        try {
+            if (request()->isGet()){
+                $id = input('id');
+                $NewsDetail = (new News())->alias('n')
+                    ->field(['n.*','u.user_name','c.name cate_name','from_unixtime(n.create_t) create_t','from_unixtime(n.update_t) update_t'])
+                    ->join('crm_users u','n.uid = u.id')
+                    ->join('crm_cate c','n.cate_id = c.id')
+                    ->where(['n.id'=>$id])->find()->toArray();
+                (new News())->update(['id'=>$NewsDetail['id'],'view'=>$NewsDetail['view']+1]);
+                $json = [
+                    'codeMsg' => 'SUCCESS',
+                    'code' => 200,
+                    'data' => $NewsDetail
+                ];
+                return json($json);
+            } else {
+                return json(['codeMsg' => '请求错误', 'code' => 400]);
+            }
+        }catch (\Exception $e){
+            Log::error($e);
+            return json(['codeMsg'=>$e->getMessage(),'code'=>$e->getCode()]);
+        }
+    }
+
+    /**
+     * 栏目列表  [get]
+     * @return \think\response\Json
+     */
+    public function cateList(){
+        try {
+            if (request()->isGet()){
+                $CateCount = (new Cate())->count();
+                $CateList = (new Cate())->select()->toArray();
+                $json = [
+                    'codeMsg' => 'SUCCESS',
+                    'code' => 200,
+                    'totalCount' => $CateCount,
+                    'page' => 1,
+                    'totalPage' => 1,
+                    'pageSize' => $CateCount,
+                    'data' => $CateList
+                ];
+                return json($json);
             }
         }catch (\Exception $e){
             Log::error($e);
