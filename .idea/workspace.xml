@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="810d273f-84a9-487b-a6bc-d53424c3c98b" name="默认更改列表" comment="增加注册登录api">
-      <change afterPath="$PROJECT_DIR$/application/api/model/Gain.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/api/model/GainVideo.php" afterDir="false" />
+    <list default="true" id="810d273f-84a9-487b-a6bc-d53424c3c98b" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/application/admin/controller/Cate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/admin/model/Cate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/admin/view/cate/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/admin/view/cate/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/admin/view/cate/lists.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/controller/Common.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Common.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/controller/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/api/model/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/model/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/News.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/news/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/news/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/news/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/news/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/news/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/news/lists.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/news/lists.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/7f9dc61a76ded6c4957ef344c52b4033.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/7f9dc61a76ded6c4957ef344c52b4033.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/b5e5c5cb0fa6589c0e8775087a6efcb4.php" beforeDir="false" afterPath="$PROJECT_DIR$/runtime/temp/b5e5c5cb0fa6589c0e8775087a6efcb4.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +72,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/api/model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/admin/view" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -73,10 +80,10 @@
       <recent name="$PROJECT_DIR$/application/admin/view/orders" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/application/api/model" />
-      <recent name="$PROJECT_DIR$/application/admin/view/demand" />
       <recent name="$PROJECT_DIR$/application/admin/view" />
       <recent name="$PROJECT_DIR$/application/admin/model" />
+      <recent name="$PROJECT_DIR$/application/api/model" />
+      <recent name="$PROJECT_DIR$/application/admin/view/demand" />
       <recent name="$PROJECT_DIR$/application/admin/view/expert" />
     </key>
   </component>
@@ -136,7 +143,7 @@
       <workItem from="1583217458431" duration="36000" />
       <workItem from="1583241711900" duration="2118000" />
       <workItem from="1583289901859" duration="708000" />
-      <workItem from="1583413537941" duration="1776000" />
+      <workItem from="1583413537941" duration="2726000" />
     </task>
     <task id="LOCAL-00001" summary="增加api模块：主控制器api和登录api">
       <created>1583117169135</created>
@@ -180,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583124035317</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="增加注册登录api">
+      <created>1583416418616</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1583416418616</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +217,8 @@
     <MESSAGE value="增加api模块：主控制器api和登录api" />
     <MESSAGE value="调整框架配置" />
     <MESSAGE value="增加企业：列表api和详情api" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加企业：列表api和详情api" />
+    <MESSAGE value="增加注册登录api" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加注册登录api" />
   </component>
   <component name="WindowStateProjectService">
     <state x="462" y="202" key="#Notifications" timestamp="1583117408692">
@@ -215,15 +230,15 @@
     </state>
     <state x="402" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1581606424807" />
     <state x="404" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/43.23.1637.1027@43.23.1637.1027" timestamp="1581430705668" />
-    <state x="599" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583415163957">
+    <state x="599" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583416506694">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
-    <state x="599" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1583415163957" />
+    <state x="599" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1583416506694" />
     <state x="600" y="298" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/43.23.1637.1027@43.23.1637.1027" timestamp="1581148360498" />
-    <state x="465" y="136" key="CommitChangelistDialog2" timestamp="1583416356120">
+    <state x="465" y="136" key="CommitChangelistDialog2" timestamp="1583416418031">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
-    <state x="465" y="136" key="CommitChangelistDialog2/41.23.1639.1027@41.23.1639.1027" timestamp="1583416356120" />
+    <state x="465" y="136" key="CommitChangelistDialog2/41.23.1639.1027@41.23.1639.1027" timestamp="1583416418031" />
     <state x="145" y="123" width="1435" height="827" key="DiffContextDialog" timestamp="1583117442713">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
@@ -232,14 +247,14 @@
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
     <state x="650" y="298" key="FileChooserDialogImpl/41.23.1639.1027@41.23.1639.1027" timestamp="1582983642476" />
-    <state x="681" y="467" key="NewPhpFileDialog" timestamp="1583416379052">
+    <state x="681" y="467" key="NewPhpFileDialog" timestamp="1583416436005">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
-    <state x="681" y="467" key="NewPhpFileDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1583416379052" />
-    <state x="462" y="276" key="Vcs.Push.Dialog.v2" timestamp="1583124037766">
+    <state x="681" y="467" key="NewPhpFileDialog/41.23.1639.1027@41.23.1639.1027" timestamp="1583416436005" />
+    <state x="462" y="276" key="Vcs.Push.Dialog.v2" timestamp="1583416421839">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>
-    <state x="462" y="276" key="Vcs.Push.Dialog.v2/41.23.1639.1027@41.23.1639.1027" timestamp="1583124037766" />
+    <state x="462" y="276" key="Vcs.Push.Dialog.v2/41.23.1639.1027@41.23.1639.1027" timestamp="1583416421839" />
     <state x="145" y="123" width="1435" height="827" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583117534709">
       <screen x="41" y="23" width="1639" height="1027" />
     </state>

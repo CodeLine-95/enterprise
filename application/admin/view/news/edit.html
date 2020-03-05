@@ -26,6 +26,16 @@
             </div>
           </div>
           <div class="layui-form-item">
+            <label class="layui-form-label" for="cate_id">栏目</label>
+            <div class="layui-input-block">
+              <select name="cate_id" id="cate_id">
+                {foreach $cate as $c}
+                <option value="{$c.id}" {if condition="$field.cate_id == $c.id"}selected{/if}>{$c.name}</option>
+                {/foreach}
+              </select>
+            </div>
+          </div>
+          <div class="layui-form-item">
             <label class="layui-form-label" for="keywords">关键词</label>
             <div class="layui-input-block">
               <input type="text" name="keywords" value="{$field.keywords}" id="keywords" placeholder="以逗号分隔" class="layui-input">
@@ -42,7 +52,7 @@
               </div>
               {else}
               <div id="pic_img" style="margin-top: 10px;">
-                <img src="{$field.pic}" style="width: 100%;" alt="">
+                <img src="{$field.pic}" style="height: 200px;" alt="">
               </div>
               {/if}
             </div>
@@ -102,7 +112,7 @@
       done: function(res) {
         layer.close(layer.msg('上传成功！'));
         $('input[name=pic]').val(res.data);
-        $('#pic_img').html('<img style="width: 100%;" src="'+res.data+'" />');
+        $('#pic_img').html('<img style="width: 200px;" src="'+res.data+'" />');
       }
       ,error: function(){
         layer.msg('上传错误！');

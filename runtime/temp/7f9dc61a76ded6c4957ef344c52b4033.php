@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:80:"/Applications/MAMP/htdocs/bbbbbb/public/../application/admin/view/news/edit.html";i:1582095904;s:73:"/Applications/MAMP/htdocs/bbbbbb/application/admin/view/public/title.html";i:1581519893;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:80:"/Applications/MAMP/htdocs/bbbbbb/public/../application/admin/view/news/edit.html";i:1583417319;s:73:"/Applications/MAMP/htdocs/bbbbbb/application/admin/view/public/title.html";i:1581519893;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,6 +75,16 @@
             </div>
           </div>
           <div class="layui-form-item">
+            <label class="layui-form-label" for="cate_id">栏目</label>
+            <div class="layui-input-block">
+              <select name="cate_id" id="cate_id">
+                <?php foreach($cate as $c): ?>
+                <option value="<?php echo $c['id']; ?>" <?php if($field['cate_id'] == $c['id']): ?>selected<?php endif; ?>><?php echo $c['name']; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+          </div>
+          <div class="layui-form-item">
             <label class="layui-form-label" for="keywords">关键词</label>
             <div class="layui-input-block">
               <input type="text" name="keywords" value="<?php echo $field['keywords']; ?>" id="keywords" placeholder="以逗号分隔" class="layui-input">
@@ -91,7 +101,7 @@
               </div>
               <?php else: ?>
               <div id="pic_img" style="margin-top: 10px;">
-                <img src="<?php echo $field['pic']; ?>" style="width: 100%;" alt="">
+                <img src="<?php echo $field['pic']; ?>" style="height: 200px;" alt="">
               </div>
               <?php endif; ?>
             </div>

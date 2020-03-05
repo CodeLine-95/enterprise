@@ -22,7 +22,7 @@
       <crmblok>
           <div style="position: relative;">
             <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-            <button class="layui-btn layui-btn-normal" onclick="crm_admin_show('添加','{:url('news/add')}')"><i class="layui-icon">&#xe608;</i>添加</button>
+            <button class="layui-btn layui-btn-normal" onclick="crm_admin_show('添加','{:url('cate/add')}')"><i class="layui-icon">&#xe608;</i>添加</button>
             <form class="layui-form" method="get" style="display:inline-block;position: absolute;right: 0;">
               <div class="layui-input-inline">
                 <select name="type">
@@ -43,19 +43,13 @@
                 <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
               </th>
               <th align="center" style="width:80px;">序号</th>
-              <th align="center">标题</th>
-              <th align="center">栏目</th>
-              <th align="center">查看</th>
-              <th align="center">推荐</th>
-              <th align="center">用户</th>
-              <th align="center">状态</th>
-              <th align="center">时间</th>
+              <th align="center">名称</th>
               <th align="center">操作</th>
             </tr>
           </thead>
           <tbody>
           {empty name="list"}
-            <tr align="center" style="height:500px;"><td colspan="10">暂无列表</td></tr>
+            <tr align="center" style="height:500px;"><td colspan="4">暂无栏目</td></tr>
           {else}
             {foreach $list as $l}
               <tr>
@@ -63,25 +57,9 @@
                   <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$l.id}'><i class="layui-icon">&#xe605;</i></div>
                 </td>
                 <td>{$l['id']}</td>
-                <td>{$l['title']}</td>
-                <td>{$l['cate_name']}</td>
-                <td>{$l['view']}</td>
+                <td>{$l['name']}</td>
                 <td>
-                  {switch name="$l['is_recommend']"}
-                    {case value="1"}已推荐{/case}
-                    {default /}未推荐
-                  {/switch}
-                </td>
-                <td>{$l['user_name']}</td>
-                <td>
-                  {switch name="$l['status']"}
-                  {case value="1"}发布{/case}
-                  {default /}未发布
-                  {/switch}
-                </td>
-                <td>{:date('Y-m-d H:i:s',$l['create_t'])}</td>
-                <td>
-                	<button class="layui-btn layui-btn-normal layui-btn-sm" onclick="crm_admin_show('编辑','{:url('news/edit',['id'=>$l['id']])}')">编辑</button>
+                	<button class="layui-btn layui-btn-normal layui-btn-sm" onclick="crm_admin_show('编辑','{:url('cate/edit',['id'=>$l['id']])}')">编辑</button>
                   <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="del('{$l['id']}')">删除</button>
                 </td>
               </tr>
@@ -100,8 +78,8 @@
   <script>
   	function del(id)
   	{
-  		layer.confirm("您确定删除该新闻吗？",function(){
-  		  $.post("{:url('news/del')}",{id:id},function (res) {
+  		layer.confirm("您确定删除该栏目吗？",function(){
+  		  $.post("{:url('cate/del')}",{id:id},function (res) {
             layer.msg(res.msg,{icon:res.icon,time:1000},function(){
               window.location.reload();
             });
@@ -110,8 +88,8 @@
   	}
     function delAll() {
       var datas = tableCheck.getData();
-      layer.confirm("确认删除选择的新闻吗？",function(){
-        $.post("{:url('news/del')}",{id:JSON.stringify(datas)},function (res) {
+      layer.confirm("确认删除选择的栏目吗？",function(){
+        $.post("{:url('cate/del')}",{id:JSON.stringify(datas)},function (res) {
           layer.msg(res.msg,{icon:res.icon,time:1000},function(){
             window.location.reload();
           });

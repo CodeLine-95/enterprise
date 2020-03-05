@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:81:"/Applications/MAMP/htdocs/bbbbbb/public/../application/admin/view/news/lists.html";i:1582119747;s:73:"/Applications/MAMP/htdocs/bbbbbb/application/admin/view/public/title.html";i:1581519893;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:81:"/Applications/MAMP/htdocs/bbbbbb/public/../application/admin/view/news/lists.html";i:1583417024;s:73:"/Applications/MAMP/htdocs/bbbbbb/application/admin/view/public/title.html";i:1581519893;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,6 +93,7 @@
               </th>
               <th align="center" style="width:80px;">序号</th>
               <th align="center">标题</th>
+              <th align="center">栏目</th>
               <th align="center">查看</th>
               <th align="center">推荐</th>
               <th align="center">用户</th>
@@ -103,7 +104,7 @@
           </thead>
           <tbody>
           <?php if(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty())): ?>
-            <tr align="center" style="height:500px;"><td colspan="9">暂无新闻</td></tr>
+            <tr align="center" style="height:500px;"><td colspan="10">暂无列表</td></tr>
           <?php else: foreach($list as $l): ?>
               <tr>
                 <td>
@@ -111,6 +112,7 @@
                 </td>
                 <td><?php echo $l['id']; ?></td>
                 <td><?php echo $l['title']; ?></td>
+                <td><?php echo $l['cate_name']; ?></td>
                 <td><?php echo $l['view']; ?></td>
                 <td>
                   <?php switch($l['is_recommend']): case "1": ?>已推荐<?php break; default: ?>未推荐
