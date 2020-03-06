@@ -2,7 +2,7 @@
 namespace app\api\controller;
 
 use app\api\model\Cate;
-use app\api\model\Enterprise;
+use app\api\Model\Enterprise;
 use app\api\model\Gain;
 use app\api\model\GainVideo;
 use app\api\model\News;
