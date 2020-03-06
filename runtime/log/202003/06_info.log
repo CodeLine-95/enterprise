@@ -1,0 +1,28 @@
+---------------------------------------------------------------
+[2020-03-06T13:44:38+08:00] 0.0.0.0 GET bbbbbb.im/api/common/enterpriseList
+[ info ] [ LANG ] /Applications/MAMP/htdocs/bbbbbb/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'api',
+    1 => 'common',
+    2 => 'enterpriseList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'bbbbbb.im',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8,mt;q=0.7',
+  'cookie' => 'PHPSESSID=7164baff9668cc690bd1e5b8e0a4c8a5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ BEHAVIOR ] Run app\api\behavior\CrossDomain @module_init [ RunTime:0.004861s ]
+[ info ] [ RUN ] app\api\controller\Common->enterpriseList[ /Applications/MAMP/htdocs/bbbbbb/application/api/controller/Common.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT file

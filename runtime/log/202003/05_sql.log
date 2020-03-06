@@ -1,4 +1,5 @@
 ---------------------------------------------------------------
+<<<<<<< HEAD
 [2020-03-05T22:43:13+08:00] 221.220.244.169 GET bbb.flv.pet/admin/index/index.html
 [ sql ] [ DB ] CONNECT:[ UseTime:0.000366s ] mysql:host=127.0.0.1;dbname=bbb_flv_pet;charset=utf8
 [ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000592s ]
@@ -67,3 +68,649 @@
 [ sql ] [ SQL ] SHOW COLUMNS FROM `crm_users` [ RunTime:0.000513s ]
 [ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_users` LIMIT 1 [ RunTime:0.000150s ]
 [ sql ] [ SQL ] select version() as v; [ RunTime:0.000133s ]
+=======
+[2020-03-05T21:06:22+08:00] 0.0.0.0 GET bbbbbb.im/admin/login/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000769s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.005242s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000951s ]
+---------------------------------------------------------------
+[2020-03-05T21:06:30+08:00] 0.0.0.0 POST bbbbbb.im/admin/login/login_action.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000722s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_admin` [ RunTime:0.001695s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_admin` WHERE  `user_name` = 'admin' LIMIT 1 [ RunTime:0.002375s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_role` [ RunTime:0.001058s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_role` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000761s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000972s ]
+[ sql ] [ SQL ] SELECT `url` FROM `crm_rule` [ RunTime:0.000672s ]
+[ sql ] [ SQL ] UPDATE `crm_admin`  SET `last_login`=1583413590,`user_host`='0.0.0.0'  WHERE  `id` = 1 [ RunTime:0.003602s ]
+---------------------------------------------------------------
+[2020-03-05T21:06:32+08:00] 0.0.0.0 GET bbbbbb.im/admin/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000649s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001100s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000922s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.002016s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_admin` [ RunTime:0.000974s ]
+[ sql ] [ SQL ] SELECT `id`,`user_name`,`user_pwd`,`user_face`,`user_host`,`create_time`,`last_login`,`role_id`,`user_status` FROM `crm_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000723s ]
+---------------------------------------------------------------
+[2020-03-05T21:06:32+08:00] 0.0.0.0 GET bbbbbb.im/admin/index/console.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000854s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001060s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.003228s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001910s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003761s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.003652s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` LIMIT 1 [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_users` [ RunTime:0.010862s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_users` LIMIT 1 [ RunTime:0.000700s ]
+[ sql ] [ SQL ] select version() as v; [ RunTime:0.001437s ]
+---------------------------------------------------------------
+[2020-03-05T21:06:33+08:00] 0.0.0.0 GET bbbbbb.im/admin/conf/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001056s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001909s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000939s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.002222s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000845s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000384s ]
+---------------------------------------------------------------
+[2020-03-05T21:06:35+08:00] 0.0.0.0 GET bbbbbb.im/admin/users/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000734s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001425s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003346s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000970s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001108s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001577s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000825s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_users` [ RunTime:0.001033s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_users` LIMIT 1 [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SELECT `id`,`user_name`,`user_pwd`,`user_face`,`user_host`,`create_time`,`last_login`,`user_status`,`user_sign`,`user_sex`,`user_city`,`user_birthday`,`user_email`,`user_nick` FROM `crm_users` LIMIT 0,10 [ RunTime:0.000856s ]
+---------------------------------------------------------------
+[2020-03-05T21:35:19+08:00] 0.0.0.0 GET bbbbbb.im/admin/login/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003424s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.002808s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000582s ]
+---------------------------------------------------------------
+[2020-03-05T21:46:59+08:00] 0.0.0.0 POST bbbbbb.im/admin/login/login_action.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000839s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_admin` [ RunTime:0.001411s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_admin` WHERE  `user_name` = 'admin' LIMIT 1 [ RunTime:0.000723s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_role` [ RunTime:0.001110s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_role` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001265s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001055s ]
+[ sql ] [ SQL ] SELECT `url` FROM `crm_rule` [ RunTime:0.000487s ]
+[ sql ] [ SQL ] UPDATE `crm_admin`  SET `last_login`=1583416019,`user_host`='0.0.0.0'  WHERE  `id` = 1 [ RunTime:0.001316s ]
+---------------------------------------------------------------
+[2020-03-05T21:47:01+08:00] 0.0.0.0 GET bbbbbb.im/admin/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000635s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001045s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000921s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000755s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000903s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_admin` [ RunTime:0.001407s ]
+[ sql ] [ SQL ] SELECT `id`,`user_name`,`user_pwd`,`user_face`,`user_host`,`create_time`,`last_login`,`role_id`,`user_status` FROM `crm_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000509s ]
+---------------------------------------------------------------
+[2020-03-05T21:47:01+08:00] 0.0.0.0 GET bbbbbb.im/admin/index/console.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000574s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.006901s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001006s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000668s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000621s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001678s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` LIMIT 1 [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_users` [ RunTime:0.000969s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_users` LIMIT 1 [ RunTime:0.000333s ]
+[ sql ] [ SQL ] select version() as v; [ RunTime:0.000510s ]
+---------------------------------------------------------------
+[2020-03-05T21:48:17+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000849s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001263s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003466s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001191s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001097s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 1 [ RunTime:0.001391s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name` FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 0,10 [ RunTime:0.001703s ]
+---------------------------------------------------------------
+[2020-03-05T21:48:42+08:00] 0.0.0.0 GET bbbbbb.im/admin/expert/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000640s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000948s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.002329s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000936s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001564s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_expert` LIMIT 0,10 [ RunTime:0.000676s ]
+---------------------------------------------------------------
+[2020-03-05T21:48:47+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000575s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001165s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001110s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000950s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001155s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 1 [ RunTime:0.000849s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name` FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 0,10 [ RunTime:0.000636s ]
+---------------------------------------------------------------
+[2020-03-05T21:51:01+08:00] 0.0.0.0 GET bbbbbb.im/admin/power/powerlist.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000953s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.007443s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001771s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.004404s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000614s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`level_id` FROM `crm_rule` ORDER BY `id` DESC [ RunTime:0.000593s ]
+---------------------------------------------------------------
+[2020-03-05T21:51:05+08:00] 0.0.0.0 GET bbbbbb.im/admin/power/poweradd.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001460s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001154s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000520s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000558s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001878s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000886s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000600s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`level_id` FROM `crm_rule` ORDER BY `id` DESC [ RunTime:0.000552s ]
+---------------------------------------------------------------
+[2020-03-05T21:51:21+08:00] 0.0.0.0 POST bbbbbb.im/admin/power/poweradd.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000720s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000849s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000756s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000717s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SELECT `id`,`level_id`,`parent_id` FROM `crm_rule` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.002104s ]
+[ sql ] [ SQL ] INSERT INTO `crm_rule` (`pid` , `name` , `url` , `sort` , `status` , `parent_id` , `level_id`) VALUES (10 , '栏目列表' , 'admin/cate/lists' , 0 , 1 , 10 , 2) [ RunTime:0.001225s ]
+---------------------------------------------------------------
+[2020-03-05T21:51:23+08:00] 0.0.0.0 GET bbbbbb.im/admin/power/powerlist.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000799s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.011756s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001322s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001414s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000959s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`level_id` FROM `crm_rule` ORDER BY `id` DESC [ RunTime:0.003247s ]
+---------------------------------------------------------------
+[2020-03-05T21:51:24+08:00] 0.0.0.0 GET bbbbbb.im/admin/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000623s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000809s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000868s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.001875s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001261s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_admin` [ RunTime:0.005265s ]
+[ sql ] [ SQL ] SELECT `id`,`user_name`,`user_pwd`,`user_face`,`user_host`,`create_time`,`last_login`,`role_id`,`user_status` FROM `crm_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000608s ]
+---------------------------------------------------------------
+[2020-03-05T21:51:24+08:00] 0.0.0.0 GET bbbbbb.im/admin/index/console.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000656s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001004s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001020s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000648s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.000848s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` LIMIT 1 [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_users` [ RunTime:0.003291s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_users` LIMIT 1 [ RunTime:0.000632s ]
+[ sql ] [ SQL ] select version() as v; [ RunTime:0.000371s ]
+---------------------------------------------------------------
+[2020-03-05T21:57:50+08:00] 0.0.0.0 GET bbbbbb.im/admin/cate/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001489s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001957s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000527s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001490s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001522s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.002252s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_cate` LIMIT 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_cate` LIMIT 0,10 [ RunTime:0.000372s ]
+---------------------------------------------------------------
+[2020-03-05T21:57:55+08:00] 0.0.0.0 GET bbbbbb.im/admin/cate/add.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000643s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001094s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000652s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.001533s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001990s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000676s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000562s ]
+---------------------------------------------------------------
+[2020-03-05T21:59:35+08:00] 0.0.0.0 GET bbbbbb.im/admin/cate/add.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005831s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.002210s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000858s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000686s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.003217s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.002723s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000582s ]
+---------------------------------------------------------------
+[2020-03-05T22:00:27+08:00] 0.0.0.0 POST bbbbbb.im/admin/cate/add.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000897s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001477s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.004394s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.001124s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000840s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000742s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.001068s ]
+[ sql ] [ SQL ] INSERT INTO `crm_cate` (`name`) VALUES ('高企新闻') [ RunTime:0.000581s ]
+---------------------------------------------------------------
+[2020-03-05T22:00:28+08:00] 0.0.0.0 GET bbbbbb.im/admin/cate/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000683s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000700s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000624s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.001069s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_cate` LIMIT 1 [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_cate` LIMIT 0,10 [ RunTime:0.000323s ]
+---------------------------------------------------------------
+[2020-03-05T22:00:55+08:00] 0.0.0.0 GET bbbbbb.im/admin/cate/add.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000774s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001346s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000677s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000810s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000616s ]
+---------------------------------------------------------------
+[2020-03-05T22:01:02+08:00] 0.0.0.0 POST bbbbbb.im/admin/cate/add.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000803s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001450s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000851s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000705s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.003937s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.001106s ]
+[ sql ] [ SQL ] INSERT INTO `crm_cate` (`name`) VALUES ('通知通告') [ RunTime:0.000611s ]
+---------------------------------------------------------------
+[2020-03-05T22:01:04+08:00] 0.0.0.0 GET bbbbbb.im/admin/cate/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000621s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001021s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000480s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000949s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000801s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.000983s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_cate` LIMIT 1 [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_cate` LIMIT 0,10 [ RunTime:0.000358s ]
+---------------------------------------------------------------
+[2020-03-05T22:01:05+08:00] 0.0.0.0 GET bbbbbb.im/admin/cate/edit/id/2.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000953s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001095s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000978s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000708s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.001066s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_cate` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.004795s ]
+---------------------------------------------------------------
+[2020-03-05T22:01:08+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000619s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001071s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000594s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001119s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001652s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001747s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 1 [ RunTime:0.000724s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name` FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 0,10 [ RunTime:0.000482s ]
+---------------------------------------------------------------
+[2020-03-05T22:01:10+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004545s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.003955s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000671s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000542s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000889s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001979s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001344s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 1 [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name` FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 0,10 [ RunTime:0.000494s ]
+---------------------------------------------------------------
+[2020-03-05T22:01:18+08:00] 0.0.0.0 GET bbbbbb.im/admin/power/powerlist.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000707s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000879s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.005956s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001325s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`level_id` FROM `crm_rule` ORDER BY `id` DESC [ RunTime:0.000616s ]
+---------------------------------------------------------------
+[2020-03-05T22:01:28+08:00] 0.0.0.0 GET bbbbbb.im/admin/power/poweredit/id/13.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002065s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.002527s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001223s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.013156s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000653s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`level_id` FROM `crm_rule` ORDER BY `id` DESC [ RunTime:0.001633s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_rule` WHERE  `id` = 13 LIMIT 1 [ RunTime:0.000747s ]
+---------------------------------------------------------------
+[2020-03-05T22:01:35+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001946s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001138s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000879s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000904s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000810s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000709s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001514s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 1 [ RunTime:0.003787s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name` FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 0,10 [ RunTime:0.000794s ]
+---------------------------------------------------------------
+[2020-03-05T22:02:49+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001156s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001174s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.003867s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001266s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000809s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001352s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 1 [ RunTime:0.002517s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name` FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 0,10 [ RunTime:0.000591s ]
+---------------------------------------------------------------
+[2020-03-05T22:03:28+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000837s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000986s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000651s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000800s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001532s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 1 [ RunTime:0.001075s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 0,10 [ RunTime:0.000600s ]
+---------------------------------------------------------------
+[2020-03-05T22:03:46+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000614s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.012023s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000802s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000552s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.000895s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 1 [ RunTime:0.000757s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 0,10 [ RunTime:0.000468s ]
+---------------------------------------------------------------
+[2020-03-05T22:07:05+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/add.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000656s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001008s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000958s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000874s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.002101s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000837s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000679s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.000941s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_cate` [ RunTime:0.000436s ]
+---------------------------------------------------------------
+[2020-03-05T22:08:02+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002430s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.003695s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.004630s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.002141s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.003139s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.005016s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000751s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001079s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 1 [ RunTime:0.000776s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 0,10 [ RunTime:0.000685s ]
+---------------------------------------------------------------
+[2020-03-05T22:08:10+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/edit/id/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000833s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000776s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.002669s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.006509s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001112s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000817s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.005420s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_news` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001432s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.001827s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_cate` [ RunTime:0.000394s ]
+---------------------------------------------------------------
+[2020-03-05T22:08:42+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/edit/id/1.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010056s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.006884s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003345s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.002393s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.003133s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.002412s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_news` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003723s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.001584s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_cate` [ RunTime:0.000421s ]
+---------------------------------------------------------------
+[2020-03-05T22:09:27+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/add.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001850s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001427s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000897s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001447s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001343s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.001065s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_cate` [ RunTime:0.000354s ]
+---------------------------------------------------------------
+[2020-03-05T22:16:03+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001370s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001634s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001696s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 0,10 [ RunTime:0.002015s ]
+---------------------------------------------------------------
+[2020-03-05T22:16:31+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000765s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001151s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.002349s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 0,10 [ RunTime:0.003160s ]
+---------------------------------------------------------------
+[2020-03-05T22:17:53+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList/cate_id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000822s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001600s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000760s ]
+---------------------------------------------------------------
+[2020-03-05T22:18:19+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList/cate_id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000824s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001217s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000994s ]
+---------------------------------------------------------------
+[2020-03-05T22:18:27+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList/cate_id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000970s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.002846s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000900s ]
+---------------------------------------------------------------
+[2020-03-05T22:18:34+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList/cate_id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000748s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001146s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000399s ]
+---------------------------------------------------------------
+[2020-03-05T22:18:38+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList/cate_id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000641s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001034s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000405s ]
+---------------------------------------------------------------
+[2020-03-05T22:18:50+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList/cate_id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000691s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001174s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000384s ]
+---------------------------------------------------------------
+[2020-03-05T22:18:57+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList?cate_id=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000909s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001753s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000700s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.000798s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`cate_id` = '1' LIMIT 0,10 [ RunTime:0.000721s ]
+---------------------------------------------------------------
+[2020-03-05T22:19:03+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList?cate_id=2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000750s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001186s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`cate_id` = '2' LIMIT 0,10 [ RunTime:0.000917s ]
+---------------------------------------------------------------
+[2020-03-05T22:20:03+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000592s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001119s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000388s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.000830s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 0,10 [ RunTime:0.003224s ]
+---------------------------------------------------------------
+[2020-03-05T22:20:10+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList?cate_id=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000798s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001180s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001034s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`cate_id` = '1' LIMIT 0,10 [ RunTime:0.001136s ]
+---------------------------------------------------------------
+[2020-03-05T22:20:12+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList?cate_id=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000674s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001016s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.000875s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`cate_id` = '1' LIMIT 0,10 [ RunTime:0.000709s ]
+---------------------------------------------------------------
+[2020-03-05T22:20:22+08:00] 0.0.0.0 GET bbbbbb.im/api/common/newsList?cate_id=1&pageSize=1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002905s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.002185s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.001459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`cate_id` = '1' LIMIT 0,1 [ RunTime:0.000612s ]
+---------------------------------------------------------------
+[2020-03-05T22:22:21+08:00] 0.0.0.0 GET bbbbbb.im/api/common/NewsDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001978s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.003196s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`id` = '1' LIMIT 1 [ RunTime:0.002000s ]
+---------------------------------------------------------------
+[2020-03-05T22:23:24+08:00] 0.0.0.0 GET bbbbbb.im/api/common/NewsDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000750s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.002062s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`id` = '1' LIMIT 1 [ RunTime:0.001390s ]
+[ sql ] [ SQL ] UPDATE `crm_news`  SET `view`=1  WHERE  `id` = 1 [ RunTime:0.000858s ]
+---------------------------------------------------------------
+[2020-03-05T22:23:25+08:00] 0.0.0.0 GET bbbbbb.im/api/common/NewsDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000652s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001998s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`id` = '1' LIMIT 1 [ RunTime:0.001083s ]
+[ sql ] [ SQL ] UPDATE `crm_news`  SET `view`=2  WHERE  `id` = 1 [ RunTime:0.000791s ]
+---------------------------------------------------------------
+[2020-03-05T22:23:27+08:00] 0.0.0.0 GET bbbbbb.im/api/common/NewsDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000826s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001202s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`id` = '1' LIMIT 1 [ RunTime:0.001375s ]
+[ sql ] [ SQL ] UPDATE `crm_news`  SET `view`=3  WHERE  `id` = 1 [ RunTime:0.000580s ]
+---------------------------------------------------------------
+[2020-03-05T22:23:28+08:00] 0.0.0.0 GET bbbbbb.im/api/common/NewsDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000877s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001029s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`id` = '1' LIMIT 1 [ RunTime:0.000756s ]
+[ sql ] [ SQL ] UPDATE `crm_news`  SET `view`=4  WHERE  `id` = 1 [ RunTime:0.000574s ]
+---------------------------------------------------------------
+[2020-03-05T22:23:30+08:00] 0.0.0.0 GET bbbbbb.im/api/common/NewsDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000645s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001222s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`id` = '1' LIMIT 1 [ RunTime:0.001878s ]
+[ sql ] [ SQL ] UPDATE `crm_news`  SET `view`=5  WHERE  `id` = 1 [ RunTime:0.000607s ]
+---------------------------------------------------------------
+[2020-03-05T22:23:31+08:00] 0.0.0.0 GET bbbbbb.im/api/common/NewsDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000583s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001686s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`id` = '1' LIMIT 1 [ RunTime:0.000886s ]
+[ sql ] [ SQL ] UPDATE `crm_news`  SET `view`=6  WHERE  `id` = 1 [ RunTime:0.000571s ]
+---------------------------------------------------------------
+[2020-03-05T22:23:32+08:00] 0.0.0.0 GET bbbbbb.im/api/common/NewsDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000651s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.000848s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`id` = '1' LIMIT 1 [ RunTime:0.000652s ]
+[ sql ] [ SQL ] UPDATE `crm_news`  SET `view`=7  WHERE  `id` = 1 [ RunTime:0.003086s ]
+---------------------------------------------------------------
+[2020-03-05T22:23:33+08:00] 0.0.0.0 GET bbbbbb.im/api/common/NewsDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000594s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.000921s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`id` = '1' LIMIT 1 [ RunTime:0.001035s ]
+[ sql ] [ SQL ] UPDATE `crm_news`  SET `view`=8  WHERE  `id` = 1 [ RunTime:0.000545s ]
+---------------------------------------------------------------
+[2020-03-05T22:23:49+08:00] 0.0.0.0 GET bbbbbb.im/api/common/NewsDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002591s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001036s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name,from_unixtime(n.create_t) create_t,from_unixtime(n.update_t) update_t FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` WHERE  `n`.`id` = '1' LIMIT 1 [ RunTime:0.000993s ]
+[ sql ] [ SQL ] UPDATE `crm_news`  SET `view`=9  WHERE  `id` = 1 [ RunTime:0.004843s ]
+---------------------------------------------------------------
+[2020-03-05T22:24:14+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/add.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001845s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.003624s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.001894s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.003017s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000777s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.000962s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_cate` [ RunTime:0.000380s ]
+---------------------------------------------------------------
+[2020-03-05T22:24:33+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000762s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000944s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001105s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000735s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000480s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001036s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 1 [ RunTime:0.001329s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 0,10 [ RunTime:0.002624s ]
+---------------------------------------------------------------
+[2020-03-05T22:24:46+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000667s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000894s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000887s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000948s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001212s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003063s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.000913s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 1 [ RunTime:0.000906s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name`,c.name cate_name FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` INNER JOIN `crm_cate` `c` ON `n`.`cate_id`=`c`.`id` LIMIT 0,10 [ RunTime:0.000540s ]
+---------------------------------------------------------------
+[2020-03-05T22:29:00+08:00] 0.0.0.0 GET bbbbbb.im/api/common/cateList
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000699s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.000827s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_cate` LIMIT 1 [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_cate` [ RunTime:0.000493s ]
+---------------------------------------------------------------
+[2020-03-05T22:29:31+08:00] 0.0.0.0 GET bbbbbb.im/api/common/cateList
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000694s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_cate` [ RunTime:0.001199s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_cate` LIMIT 1 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_cate` [ RunTime:0.000482s ]
+>>>>>>> update

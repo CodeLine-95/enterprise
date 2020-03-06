@@ -1,0 +1,6 @@
+---------------------------------------------------------------
+[2020-03-06T13:44:38+08:00] 0.0.0.0 GET bbbbbb.im/api/common/enterpriseList
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002024s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_enterprise` [ RunTime:0.013892s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_enterprise` LIMIT 1 [ RunTime:0.000717s ]
+[ sql ] [ SQL ] SELECT *,from_unixtime(create_t) create_t,from_unixtime(update_t) update_t FROM `crm_enterprise` LIMIT 0,10 [ RunTime:0.001979s ]

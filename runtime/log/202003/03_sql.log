@@ -1,0 +1,269 @@
+---------------------------------------------------------------
+[2020-03-03T21:15:27+08:00] 0.0.0.0 GET bbbbbb.im/admin/login/login.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004542s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.040480s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.001698s ]
+---------------------------------------------------------------
+[2020-03-03T21:15:37+08:00] 0.0.0.0 POST bbbbbb.im/admin/login/login_action.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000731s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_admin` [ RunTime:0.002628s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_admin` WHERE  `user_name` = 'admin' LIMIT 1 [ RunTime:0.004840s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_role` [ RunTime:0.002365s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_role` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001849s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.002527s ]
+[ sql ] [ SQL ] SELECT `url` FROM `crm_rule` [ RunTime:0.000885s ]
+[ sql ] [ SQL ] UPDATE `crm_admin`  SET `last_login`=1583241337,`user_host`='0.0.0.0'  WHERE  `id` = 1 [ RunTime:0.003979s ]
+---------------------------------------------------------------
+[2020-03-03T21:15:39+08:00] 0.0.0.0 GET bbbbbb.im/admin/index/index.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000769s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.000963s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000680s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001261s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.002342s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000672s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_admin` [ RunTime:0.001622s ]
+[ sql ] [ SQL ] SELECT `id`,`user_name`,`user_pwd`,`user_face`,`user_host`,`create_time`,`last_login`,`role_id`,`user_status` FROM `crm_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001326s ]
+---------------------------------------------------------------
+[2020-03-03T21:15:39+08:00] 0.0.0.0 GET bbbbbb.im/admin/index/console.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000945s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.003005s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.104619s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.001014s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001455s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001367s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000830s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.002794s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` LIMIT 1 [ RunTime:0.002429s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_users` [ RunTime:0.002911s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_users` LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] select version() as v; [ RunTime:0.001655s ]
+---------------------------------------------------------------
+[2020-03-03T21:15:42+08:00] 0.0.0.0 GET bbbbbb.im/admin/expert/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000646s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001261s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.001024s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001976s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000823s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000930s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.003606s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_expert` LIMIT 0,10 [ RunTime:0.000823s ]
+---------------------------------------------------------------
+[2020-03-03T21:15:45+08:00] 0.0.0.0 GET bbbbbb.im/admin/enterprise/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000638s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001101s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003154s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.002242s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001314s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000780s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_enterprise` [ RunTime:0.002882s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_enterprise` LIMIT 1 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_enterprise` LIMIT 0,10 [ RunTime:0.000700s ]
+---------------------------------------------------------------
+[2020-03-03T21:23:17+08:00] 0.0.0.0 GET bbbbbb.im/admin
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002385s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.003286s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001825s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001953s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000824s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_admin` [ RunTime:0.001582s ]
+[ sql ] [ SQL ] SELECT `id`,`user_name`,`user_pwd`,`user_face`,`user_host`,`create_time`,`last_login`,`role_id`,`user_status` FROM `crm_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000947s ]
+---------------------------------------------------------------
+[2020-03-03T21:23:18+08:00] 0.0.0.0 GET bbbbbb.im/admin/index/console.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001140s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001446s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001056s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.003756s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001318s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001096s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001387s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` LIMIT 1 [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_users` [ RunTime:0.001126s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_users` LIMIT 1 [ RunTime:0.000383s ]
+[ sql ] [ SQL ] select version() as v; [ RunTime:0.000424s ]
+---------------------------------------------------------------
+[2020-03-03T21:23:21+08:00] 0.0.0.0 GET bbbbbb.im/admin/expert/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001867s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.003268s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001078s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001350s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001027s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.003086s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.001602s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_expert` LIMIT 0,10 [ RunTime:0.001303s ]
+---------------------------------------------------------------
+[2020-03-03T21:23:23+08:00] 0.0.0.0 GET bbbbbb.im/admin/expert/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000873s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001664s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001046s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000616s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001335s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000991s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000778s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.002219s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_expert` LIMIT 0,10 [ RunTime:0.000523s ]
+---------------------------------------------------------------
+[2020-03-03T21:23:37+08:00] 0.0.0.0 GET bbbbbb.im/admin/gain_video/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003867s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.004333s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001055s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000875s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001482s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001072s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000665s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain_video` [ RunTime:0.005392s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_gain_video` `v` INNER JOIN `crm_gain` `g` ON `v`.`gain_id`=`g`.`id` INNER JOIN `crm_expert` `e` ON `v`.`expert_id`=`e`.`id` LIMIT 1 [ RunTime:0.006669s ]
+[ sql ] [ SQL ] SELECT `v`.*,g.name gain_name,e.name expert_name FROM `crm_gain_video` `v` INNER JOIN `crm_gain` `g` ON `v`.`gain_id`=`g`.`id` INNER JOIN `crm_expert` `e` ON `v`.`expert_id`=`e`.`id` LIMIT 0,10 [ RunTime:0.001488s ]
+---------------------------------------------------------------
+[2020-03-03T21:23:38+08:00] 0.0.0.0 GET bbbbbb.im/admin/gain/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002719s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.003690s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.002366s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.002946s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.004336s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.002164s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.002173s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain` [ RunTime:0.003002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_gain` `g` INNER JOIN `crm_expert` `e` ON `g`.`expert_id`=`e`.`id` LIMIT 1 [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT `g`.*,e.name expert_name FROM `crm_gain` `g` INNER JOIN `crm_expert` `e` ON `g`.`expert_id`=`e`.`id` LIMIT 0,10 [ RunTime:0.000519s ]
+---------------------------------------------------------------
+[2020-03-03T21:23:40+08:00] 0.0.0.0 GET bbbbbb.im/admin/news/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001084s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.001391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.004429s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.002139s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_news` [ RunTime:0.001297s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 1 [ RunTime:0.003566s ]
+[ sql ] [ SQL ] SELECT `n`.*,`u`.`user_name` FROM `crm_news` `n` INNER JOIN `crm_users` `u` ON `n`.`uid`=`u`.`id` LIMIT 0,10 [ RunTime:0.001278s ]
+---------------------------------------------------------------
+[2020-03-03T21:23:43+08:00] 0.0.0.0 GET bbbbbb.im/admin/enterprise/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003974s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.005707s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000794s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000476s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.001113s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.004436s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000624s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_enterprise` [ RunTime:0.004453s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_enterprise` LIMIT 1 [ RunTime:0.002710s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_enterprise` LIMIT 0,10 [ RunTime:0.001673s ]
+---------------------------------------------------------------
+[2020-03-03T21:29:01+08:00] 0.0.0.0 GET bbbbbb.im/admin/gain_video/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001211s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.002179s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001433s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.011677s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.002376s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.001819s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain_video` [ RunTime:0.000969s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_gain_video` `v` INNER JOIN `crm_gain` `g` ON `v`.`gain_id`=`g`.`id` INNER JOIN `crm_expert` `e` ON `v`.`expert_id`=`e`.`id` LIMIT 1 [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT `v`.*,g.name gain_name,e.name expert_name FROM `crm_gain_video` `v` INNER JOIN `crm_gain` `g` ON `v`.`gain_id`=`g`.`id` INNER JOIN `crm_expert` `e` ON `v`.`expert_id`=`e`.`id` LIMIT 0,10 [ RunTime:0.000573s ]
+---------------------------------------------------------------
+[2020-03-03T21:35:51+08:00] 0.0.0.0 GET bbbbbb.im/api/common/gainVideoList
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000749s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001951s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_expert` LIMIT 1 [ RunTime:0.001530s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain_video` [ RunTime:0.001170s ]
+[ sql ] [ SQL ] SELECT `v`.*,g.name gain_name,e.name expert_name FROM `crm_gain_video` `v` INNER JOIN `crm_gain` `g` ON `v`.`gain_id`=`g`.`id` INNER JOIN `crm_expert` `e` ON `v`.`expert_id`=`e`.`id` LIMIT 0,10 [ RunTime:0.000921s ]
+---------------------------------------------------------------
+[2020-03-03T21:46:21+08:00] 0.0.0.0 GET bbbbbb.im/api/common/expertDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001627s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.004968s ]
+[ sql ] [ SQL ] SELECT `e`.*,from_unixtime(e.create_t) create_t,g.name gain_name,e.name expert_name FROM `crm_expert` `e` INNER JOIN `crm_gain_video` `v` ON `v`.`expert_id`=`e`.`id` INNER JOIN `crm_gain` `g` ON `v`.`gain_id`=`g`.`id` WHERE  `e`.`id` = '1' LIMIT 1 [ RunTime:0.004207s ]
+---------------------------------------------------------------
+[2020-03-03T21:47:23+08:00] 0.0.0.0 GET bbbbbb.im/api/common/expertDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000721s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001200s ]
+[ sql ] [ SQL ] SELECT `e`.*,from_unixtime(e.create_t) create_t,g.name gain_name,v.name video_name,`v`.`video` FROM `crm_expert` `e` INNER JOIN `crm_gain_video` `v` ON `v`.`expert_id`=`e`.`id` INNER JOIN `crm_gain` `g` ON `v`.`gain_id`=`g`.`id` WHERE  `e`.`id` = '1' LIMIT 1 [ RunTime:0.001146s ]
+---------------------------------------------------------------
+[2020-03-03T21:48:21+08:00] 0.0.0.0 GET bbbbbb.im/api/common/expertDetail/id/2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001195s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001809s ]
+[ sql ] [ SQL ] SELECT `e`.*,from_unixtime(e.create_t) create_t,g.name gain_name,v.name video_name,`v`.`video` FROM `crm_expert` `e` INNER JOIN `crm_gain_video` `v` ON `v`.`expert_id`=`e`.`id` INNER JOIN `crm_gain` `g` ON `v`.`gain_id`=`g`.`id` WHERE  `e`.`id` = '2' LIMIT 1 [ RunTime:0.001388s ]
+---------------------------------------------------------------
+[2020-03-03T21:48:33+08:00] 0.0.0.0 GET bbbbbb.im/api/common/expertDetail/id/2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000929s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001067s ]
+[ sql ] [ SQL ] SELECT `e`.*,from_unixtime(e.create_t) create_t,g.name gain_name,v.name video_name,`v`.`video` FROM `crm_expert` `e` INNER JOIN `crm_gain_video` `v` ON `v`.`expert_id`=`e`.`id` INNER JOIN `crm_gain` `g` ON `v`.`gain_id`=`g`.`id` WHERE  `e`.`id` = '2' LIMIT 1 [ RunTime:0.001272s ]
+---------------------------------------------------------------
+[2020-03-03T21:52:11+08:00] 0.0.0.0 GET bbbbbb.im/api/common/expertDetail/id/2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000688s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001222s ]
+[ sql ] [ SQL ] SELECT *,from_unixtime(create_t) create_t FROM `crm_expert` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001476s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain_video` [ RunTime:0.003395s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_gain_video` WHERE  `expert_id` = 2 LIMIT 1 [ RunTime:0.000762s ]
+---------------------------------------------------------------
+[2020-03-03T21:52:30+08:00] 0.0.0.0 GET bbbbbb.im/api/common/expertDetail/id/2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003192s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001174s ]
+[ sql ] [ SQL ] SELECT *,from_unixtime(create_t) create_t FROM `crm_expert` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000920s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain_video` [ RunTime:0.006161s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_gain_video` WHERE  `expert_id` = 2 LIMIT 1 [ RunTime:0.000600s ]
+---------------------------------------------------------------
+[2020-03-03T21:52:46+08:00] 0.0.0.0 GET bbbbbb.im/api/common/expertDetail/id/2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000861s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.000835s ]
+[ sql ] [ SQL ] SELECT *,from_unixtime(create_t) create_t FROM `crm_expert` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000684s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain_video` [ RunTime:0.001070s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_gain_video` WHERE  `expert_id` = 2 LIMIT 1 [ RunTime:0.000782s ]
+---------------------------------------------------------------
+[2020-03-03T21:53:02+08:00] 0.0.0.0 GET bbbbbb.im/api/common/expertDetail/id/2
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004169s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001981s ]
+[ sql ] [ SQL ] SELECT *,from_unixtime(create_t) create_t FROM `crm_expert` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.002916s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain_video` [ RunTime:0.002117s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_gain_video` WHERE  `expert_id` = 2 LIMIT 1 [ RunTime:0.000720s ]
+---------------------------------------------------------------
+[2020-03-03T21:53:12+08:00] 0.0.0.0 GET bbbbbb.im/api/common/expertDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000721s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001021s ]
+[ sql ] [ SQL ] SELECT *,from_unixtime(create_t) create_t FROM `crm_expert` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000909s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain_video` [ RunTime:0.001243s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_gain_video` WHERE  `expert_id` = 1 LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain` [ RunTime:0.002095s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_gain` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001614s ]
+---------------------------------------------------------------
+[2020-03-03T21:53:27+08:00] 0.0.0.0 GET bbbbbb.im/api/common/expertDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003003s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001870s ]
+[ sql ] [ SQL ] SELECT *,from_unixtime(create_t) create_t FROM `crm_expert` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain_video` [ RunTime:0.006513s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_gain_video` WHERE  `expert_id` = 1 LIMIT 1 [ RunTime:0.001861s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain` [ RunTime:0.001336s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_gain` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000687s ]
+---------------------------------------------------------------
+[2020-03-03T21:55:54+08:00] 0.0.0.0 GET bbbbbb.im/admin/demand/lists.html
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010164s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_conf` [ RunTime:0.001500s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001690s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` LIMIT 1 [ RunTime:0.000711s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_rule` [ RunTime:0.000903s ]
+[ sql ] [ SQL ] SELECT `id`,`url`,`name`,`status`,`pid`,`sort`,`level_id`,`icon`,`parent_id` FROM `crm_rule` WHERE  (  status = 1 ) ORDER BY `sort` ASC [ RunTime:0.000977s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_conf` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000815s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_demand` [ RunTime:0.001563s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `crm_demand` `v` INNER JOIN `crm_admin` `a` ON `v`.`uid`=`a`.`id` INNER JOIN `crm_admin` `d` ON `v`.`eid`=`d`.`id` LIMIT 1 [ RunTime:0.001459s ]
+[ sql ] [ SQL ] SELECT `v`.*,a.user_name u_name,d.user_name e_name FROM `crm_demand` `v` INNER JOIN `crm_admin` `a` ON `v`.`uid`=`a`.`id` INNER JOIN `crm_admin` `d` ON `v`.`eid`=`d`.`id` LIMIT 0,10 [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_admin` [ RunTime:0.001942s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001277s ]
+---------------------------------------------------------------
+[2020-03-03T21:56:50+08:00] 0.0.0.0 GET bbbbbb.im/api/common/expertDetail/id/1
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000949s ] mysql:host=127.0.0.1;dbname=bbbbbb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_expert` [ RunTime:0.001363s ]
+[ sql ] [ SQL ] SELECT *,from_unixtime(create_t) create_t FROM `crm_expert` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001436s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain_video` [ RunTime:0.000963s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_gain_video` WHERE  `expert_id` = 1 LIMIT 1 [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `crm_gain` [ RunTime:0.000920s ]
+[ sql ] [ SQL ] SELECT * FROM `crm_gain` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001330s ]
