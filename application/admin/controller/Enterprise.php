@@ -32,6 +32,8 @@ class Enterprise extends Base
                     case 3:
                         $list[$k]['status_name'] = '未通过';
                         break;
+                    default:
+                        $list[$k]['type_name'] = '';
                 }
                 switch ($l['type']){
                     case 1:
@@ -40,6 +42,8 @@ class Enterprise extends Base
                     case 2:
                         $list[$k]['type_name'] = '其他资质证件';
                         break;
+                    default:
+                        $list[$k]['type_name'] = '';
                 }
                 $user = (new Users())->where(['id'=>$l['uid']])->find();
                 $list[$k]['u_name'] = $user['user_name'];
