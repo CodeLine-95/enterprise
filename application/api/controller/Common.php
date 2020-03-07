@@ -304,4 +304,29 @@ class Common extends Controller
         }
     }
 
+    public function cateListNews(){
+        try{
+            $CateList = (new Cate())->select()->toArray();
+            foreach ($CateList as $k=>$c){
+                $NewsList = (new News())
+                    ->alias('n')
+                    ->field(['n.*','u.user_name','c.name cate_name','from_unixtime(n.create_t) create_t','from_unixtime(n.update_t) update_t'])
+                    ->join('crm_users u','n.uid = u.id')
+                    ->join('crm_cate c','n.cate_id = c.id')
+                    ->where(['n.cate_id'=>$c['id']])
+                    ->limit(6)->order(['n.update_t'=>'desc'])->select()->toArray();
+                $CateList[$k]['newsData'] = $NewsList;
+            }
+            $json = [
+                'codeMsg' => 'SUCCESS',
+                'code' => 200,
+                'data' => $CateList
+            ];
+            return json($json);
+        }catch (\Exception $e){
+            Log::error($e);
+            return json(['codeMsg'=>$e->getMessage(),'code'=>$e->getCode()]);
+        }
+    }
+
 }
