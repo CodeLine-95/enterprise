@@ -213,14 +213,15 @@ class Common extends Controller
                 if (!isset($params['pageSize'])) {
                     $params['pageSize'] = 10;
                 }
-                $expertCount = (new News())->count();
+                $where = $whereCount = [];
+                if (isset($params['cate_id']) && !empty($params['cate_id'])){
+                    $where = ['n.cate_id'=>$params['cate_id']];
+                    $whereCount = ['cate_id'=>$params['cate_id']];
+                }
+                $expertCount = (new News())->where($whereCount)->count();
                 $lastPage = ceil($expertCount / $params['pageSize']);
                 if ($params['page'] > $lastPage) {
                     $params['page'] = $lastPage;
-                }
-                $where = [];
-                if (isset($params['cate_id']) && !empty($params['cate_id'])){
-                    $where = ['n.cate_id'=>$params['cate_id']];
                 }
                 $pageOffset = ($params['page'] - 1) * $params['pageSize'];
                 $NewsList = (new News())
