@@ -229,7 +229,7 @@ class Common extends Controller
                     ->join('crm_users u','n.uid = u.id')
                     ->join('crm_cate c','n.cate_id = c.id')
                     ->where($where)
-                    ->limit($pageOffset, $params['pageSize'])->select()->toArray();
+                    ->limit($pageOffset, $params['pageSize'])->order(['n.update_t'=>'desc'])->select()->toArray();
                 $json = [
                     'codeMsg' => 'SUCCESS',
                     'code' => 200,
