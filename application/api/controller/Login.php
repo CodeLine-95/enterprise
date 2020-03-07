@@ -134,6 +134,7 @@ class Login extends Controller
                 }
                 $params['id'] = $params['uid'];
                 unset($params['uid']);
+                $params['update_t'] = time();
                 $re = (new Users())->update($params);
                 if($re){
                     return json(['codeMsg'=>'SUCCESS','code'=>200]);
