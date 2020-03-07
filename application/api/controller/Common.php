@@ -162,6 +162,7 @@ class Common extends Controller
      * @param $corp      string  法人
      * @param $tel       string  电话
      * @param $name      string  企业名称
+     * @param $uid       string  用户id
      * @param $validity_start  string 开始有效期
      * @param $validity_end    string 结束有效期
      * @param $certificate     string 资质文件
