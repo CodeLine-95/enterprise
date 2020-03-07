@@ -213,7 +213,7 @@ class Common extends Controller
                 if (!isset($params['pageSize'])) {
                     $params['pageSize'] = 10;
                 }
-                $expertCount = (new Expert())->count();
+                $expertCount = (new News())->count();
                 $lastPage = ceil($expertCount / $params['pageSize']);
                 if ($params['page'] > $lastPage) {
                     $params['page'] = $lastPage;
@@ -304,6 +304,10 @@ class Common extends Controller
         }
     }
 
+    /**
+     * 栏目列表和对应的新闻6条数据
+     * @return \think\response\Json
+     */
     public function cateListNews(){
         try{
             $CateList = (new Cate())->select()->toArray();
@@ -323,6 +327,36 @@ class Common extends Controller
                 'data' => $CateList
             ];
             return json($json);
+        }catch (\Exception $e){
+            Log::error($e);
+            return json(['codeMsg'=>$e->getMessage(),'code'=>$e->getCode()]);
+        }
+    }
+
+    /**
+     * 上传图片的提交实例
+
+     * @return string
+     */
+    public function upload(){
+        try {
+            $file = request()->file('file');//获取文件信息
+            $path = 'uploads';//文件目录
+            //创建文件夹
+            if(!is_dir($path)){
+                mkdir($path, 0755, true);
+            }
+            $info = $file->move($path);//保存在目录文件下
+            if ($info && $info->getPathname()) {
+                $json = [
+                    'codeMsg' => 'SUCCESS',
+                    'code' => 200,
+                    'data' => '/'.$info->getPathname()
+                ];
+                return json($json);
+            } else {
+                return json(['codeMsg'=>$file->getError(),'code'=>400]);
+            }
         }catch (\Exception $e){
             Log::error($e);
             return json(['codeMsg'=>$e->getMessage(),'code'=>$e->getCode()]);
