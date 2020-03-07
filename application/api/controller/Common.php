@@ -170,6 +170,27 @@ class Common extends Controller
                 $id = input('id');
                 $uid = input('uid');
                 $EnterpriseDetail = (new Enterprise())->field(['*','from_unixtime(create_t) create_t','from_unixtime(update_t) update_t'])->where(['id'=>$id,'uid'=>$uid])->find()->toArray();
+                if ($EnterpriseDetail){
+                    switch ($EnterpriseDetail['status']){
+                        case 1:
+                            $EnterpriseDetail['status_name'] = '已申请';
+                            break;
+                        case 2:
+                            $EnterpriseDetail['status_name'] = '已通过';
+                            break;
+                        case 3:
+                            $EnterpriseDetail['status_name'] = '未通过';
+                            break;
+                    }
+                    switch ($EnterpriseDetail['type']){
+                        case 1:
+                            $EnterpriseDetail['type_name'] = '企业工商营业执照';
+                            break;
+                        case 2:
+                            $EnterpriseDetail['type_name'] = '其他资质证件';
+                            break;
+                    }
+                }
                 $json = [
                     'codeMsg' => 'SUCCESS',
                     'code' => 200,
