@@ -155,6 +155,39 @@ class Common extends Controller
     }
 
     /**
+     * 注册企业
+     * @param $credit_id string  统一代码
+     * @param $type      int     资质类型
+     * @param $card_id   string  身份证
+     * @param $corp      string  法人
+     * @param $tel       string  电话
+     * @param $name      string  企业名称
+     * @param $validity_start  string 开始有效期
+     * @param $validity_end    string 结束有效期
+     * @param $certificate     string 资质文件
+     * @return \think\response\Json
+     */
+    public function enterpriseAdd(){
+        try {
+            if (request()->isPost()){
+                $params = request()->post();
+                $params['create_t'] = time();
+                $params['status'] = 1;
+                if ((new Enterprise())->save($params)){
+                    return json(['codeMsg' => '注册成功', 'code' => 200]);
+                }else{
+                    return json(['codeMsg' => '注册失败', 'code' => 400]);
+                }
+            } else {
+                return json(['codeMsg' => '请求错误', 'code' => 400]);
+            }
+        }catch (\Exception $e){
+            Log::error($e);
+            return json(['codeMsg'=>$e->getMessage(),'code'=>$e->getCode()]);
+        }
+    }
+
+    /**
      * 成果视频  [get]
      * @return \think\response\Json
      */
@@ -363,6 +396,5 @@ class Common extends Controller
             return json(['codeMsg'=>$e->getMessage(),'code'=>$e->getCode()]);
         }
     }
-
 
 }
