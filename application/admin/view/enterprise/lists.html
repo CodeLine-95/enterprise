@@ -51,11 +51,12 @@
                 <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
               </th>
               <th align="center" style="width:80px;">序号</th>
+              <th align="center">统一信用代码</th>
               <th align="center">企业名称</th>
-              <th align="center">联系人</th>
-              <th align="center">联系方式</th>
-              <th align="center">企业地址</th>
               <th align="center">企业法人</th>
+              <th align="center">资质类型</th>
+              <th align="center">联系方式</th>
+              <th align="center">注册用户</th>
               <th align="center">签约状态</th>
               <th align="center">操作</th>
             </tr>
@@ -70,15 +71,17 @@
                   <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='{$l.id}'><i class="layui-icon">&#xe605;</i></div>
                 </td>
                 <td>{$l['id']}</td>
+                <td>{$l['credit_id']}</td>
                 <td>{$l['name']}</td>
-                <td>{$l['tel_name']}</td>
+                <td>{$l['corp']}</td>
+                <td>{$l['type_name']}</td>
                 <td>{$l['tel']}</td>
-                <td>{$l['address']}</td>
-                <td>{$l['corporation']}</td>
+                <td>{$l['u_name']}</td>
                 <td>
                   {switch name="$l['status']"}
-                  {case value="1"}合作中{/case}
-                  {default /}已解约
+                  {case value="1"}已申请{/case}
+                  {case value="2"}已通过{/case}
+                  {default /}未通过
                   {/switch}
                 </td>
                 <td>

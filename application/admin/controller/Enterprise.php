@@ -3,6 +3,7 @@ namespace app\admin\controller;
 
 use app\admin\controller\base\Base;
 use app\admin\Model\Enterprise as EnterpriseModel;
+use app\admin\model\Users;
 
 class Enterprise extends Base
 {
@@ -19,6 +20,31 @@ class Enterprise extends Base
             }
         }
         $list = (new EnterpriseModel())->where($where)->paginate(10);
+        if ($list){
+            foreach ($list as $k=>$l){
+                switch ($l['status']){
+                    case 1:
+                        $list[$k]['status_name'] = '已申请';
+                        break;
+                    case 2:
+                        $list[$k]['status_name'] = '已通过';
+                        break;
+                    case 3:
+                        $list[$k]['status_name'] = '未通过';
+                        break;
+                }
+                switch ($l['type']){
+                    case 1:
+                        $list[$k]['type_name'] = '企业工商营业执照';
+                        break;
+                    case 2:
+                        $list[$k]['type_name'] = '其他资质证件';
+                        break;
+                }
+                $user = (new Users())->where(['id'=>$l['uid']])->find();
+                $list[$k]['u_name'] = $user['user_name'];
+            }
+        }
         $this->assign('list',$list);
         $get['type'] = isset($get['type']) ? $get['type'] : 1;
         $get['name'] = isset($get['name']) ? $get['name'] : '';
