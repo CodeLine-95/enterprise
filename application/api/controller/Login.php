@@ -129,6 +129,9 @@ class Login extends Controller
                 if (!$user){
                     return json(['codeMsg'=>'没有该用户','code'=>401]);
                 }
+                if (!isset($params['user_email']) || empty($params['user_email'])){
+                    return json(['codeMsg'=>'邮箱不能为空','code'=>401]);
+                }
                 $params['id'] = $params['uid'];
                 unset($params['uid']);
                 $re = (new Users())->update($params);

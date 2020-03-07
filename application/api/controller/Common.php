@@ -90,12 +90,18 @@ class Common extends Controller
 
     /**
      * 企业信息含分页  {get]
+     * @param  $uid      string  [必填]   注册用户编号
+     * @param  $page     string  [非必填] 当前页
+     * @param  $pageSize string  [非必填] 显示条数
      * @return \think\response\Json
      */
     public function enterpriseList(){
         try{
             if (request()->isGet()){
                 $params = request()->get();
+                if (!isset($params['uid']) || empty($params['uid'])){
+                    return json(['codeMsg' => 'uid不能为空', 'code' => 400]);
+                }
                 if (!isset($params['page'])) {
                     $params['page'] = 1;
                 }
@@ -110,7 +116,31 @@ class Common extends Controller
                 $pageOffset = ($params['page'] - 1) * $params['pageSize'];
                 $expert = (new Enterprise())
                     ->field(['*','from_unixtime(create_t) create_t','from_unixtime(update_t) update_t'])
+                    ->where(['uid'=>$params['uid']])
                     ->limit($pageOffset, $params['pageSize'])->select()->toArray();
+                if ($expert){
+                    foreach ($expert as $k=>$e){
+                        switch ($e['status']){
+                            case 1:
+                                $expert[$k]['status_name'] = '已申请';
+                                break;
+                            case 2:
+                                $expert[$k]['status_name'] = '已通过';
+                                break;
+                            case 3:
+                                $expert[$k]['status_name'] = '未通过';
+                                break;
+                        }
+                        switch ($e['type']){
+                            case 1:
+                                $expert[$k]['type_name'] = '企业工商营业执照';
+                                break;
+                            case 2:
+                                $expert[$k]['type_name'] = '其他资质证件';
+                                break;
+                        }
+                    }
+                }
                 $json = [
                     'codeMsg' => 'SUCCESS',
                     'code' => 200,
@@ -138,7 +168,8 @@ class Common extends Controller
         try {
             if (request()->isGet()){
                 $id = input('id');
-                $EnterpriseDetail = (new Enterprise())->field(['*','from_unixtime(create_t) create_t','from_unixtime(update_t) update_t'])->where(['id'=>$id])->find()->toArray();
+                $uid = input('uid');
+                $EnterpriseDetail = (new Enterprise())->field(['*','from_unixtime(create_t) create_t','from_unixtime(update_t) update_t'])->where(['id'=>$id,'uid'=>$uid])->find()->toArray();
                 $json = [
                     'codeMsg' => 'SUCCESS',
                     'code' => 200,
