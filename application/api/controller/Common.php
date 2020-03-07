@@ -303,4 +303,5 @@ class Common extends Controller
             return json(['codeMsg'=>$e->getMessage(),'code'=>$e->getCode()]);
         }
     }
+
 }
