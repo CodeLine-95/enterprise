@@ -59,7 +59,12 @@ class Enterprise extends Base
     public function add(){
         if (request()->isPost()){
             $params = request()->post();
+            $field = (new Enterprise())->where(['name'=>$params['name'],'credit_id'=>$params['credit_id'],'uid'=>$params['uid']])->find();
+            if ($field){
+                return json(['codeMsg' => '该企业以申请注册，请查看相关信息', 'code' => 400]);
+            }
             $params['create_t'] = time();
+            $params['status'] = 1;
             if ((new EnterpriseModel())->save($params)){
                 return json(['msg'   => '添加成功', 'icon'  => 6]);
             }else{
