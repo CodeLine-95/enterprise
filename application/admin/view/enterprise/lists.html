@@ -87,7 +87,7 @@
                 <td>
                   <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="crm_admin_show('编辑','{:url('enterprise/edit',['id'=>$l['id']])}')">编辑</button>
                   {if condition="$l['status'] == 1"}
-                    <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="crm_admin_show('审核','{:url('enterprise/audit',['id'=>$l['id']])}')">审核</button>
+                    <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="admin_show('审核','{:url('enterprise/audit',['id'=>$l['id']])}')">审核</button>
                   {/if}
                   <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="del('{$l['id']}')">删除</button>
                 </td>
@@ -124,6 +124,32 @@
           });
         },'json');
       });
+    }
+    function admin_show(title,url,w,h){
+      var index;
+      if (title == null || title == '') {
+        title=false;
+      };
+      if (url == null || url == '') {
+        url="404.html";
+      };
+      if (w == null || w == '') {
+        w=($(window).width()*0.9);
+      };
+      if (h == null || h == '') {
+        h=($(window).height() - 50);
+      };
+      index = layer.open({
+        type: 2,
+        area: [w+'px', h +'px'],
+        fix: false, //不固定
+        title: title,
+        content: url
+      });
+      //改变窗口大小时，重置弹窗的宽高，防止超出可视区域（如F12调出debug的操作）
+      $(window).on("resize",function(){
+        layui.layer.full(index);
+      })
     }
   </script>
 </body>
