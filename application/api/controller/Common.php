@@ -108,7 +108,7 @@ class Common extends Controller
                 if (!isset($params['pageSize'])) {
                     $params['pageSize'] = 10;
                 }
-                $expertCount = (new Enterprise())->count();
+                $expertCount = (new Enterprise())->where(['uid'=>$params['uid']])->count();
                 $lastPage = ceil($expertCount / $params['pageSize']);
                 if ($params['page'] > $lastPage) {
                     $params['page'] = $lastPage;
