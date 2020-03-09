@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {include file="public:title"/}
+  <style media="screen">
+    .layui-form-select{
+      width: 165px;
+    }
+    .layui-form-item .layui-input-inline{
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md12">
+      <div class="layui-card">
+        <div class="layui-card-header">审核</div>
+        <div class="layui-form layui-card-body" pad15>
+          <input type="hidden" name="id" value="{$field.id}">
+          <div class="layui-form-item">
+            <label class="layui-form-label">注册状态</label>
+            <div class="layui-input-inline">
+              <input type="radio" name="status" title="已申请" value="1" {if condition="$field.status == 1"}checked{/if} class="layui-input">
+              <input type="radio" name="status" title="已通过" value="2" {if condition="$field.status == 2"}checked{/if} class="layui-input">
+              <input type="radio" name="status" title="未通过" value="3" {if condition="$field.status == 3"}checked{/if} class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <label class="layui-form-label"><button class="layui-btn" lay-submit lay-filter="audit">确定</button></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  layui.use(['form','upload','laydate','layedit'], function(){
+    var form = layui.form;
+    form.on('submit(audit)', function(data){
+      $.post('{:url("enterprise/audit")}',data.field,function (res) {
+        if (res.icon == 6){
+          layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+            window.parent.location.reload();
+          });
+        } else {
+          layer.msg(res.msg,{icon: res.icon,time:1000},function(){
+            window.location.reload();
+          });
+        }
+      },'json');
+      return false;
+    });
+  });
+</script>
+</body>
+</html>

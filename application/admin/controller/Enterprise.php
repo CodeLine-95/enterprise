@@ -87,6 +87,23 @@ class Enterprise extends Base
         }
     }
 
+    public function audit(){
+        if (request()->isPost()){
+            $params = request()->post();
+            $params['update_t'] = time();
+            if ((new EnterpriseModel())->update($params)){
+                return json(['msg'   => '审核成功', 'icon'  => 6]);
+            }else{
+                return json(['msg'   => '审核失败', 'icon'  => 5]);
+            }
+        }else{
+            $id = input('id');
+            $field = (new EnterpriseModel())->where(['id'=>$id])->find();
+            $this->assign('field',$field);
+            return $this->fetch();
+        }
+    }
+
     public function del(){
         $id = json_decode(input('post.id'),true);
         if(EnterpriseModel::destroy($id)){
