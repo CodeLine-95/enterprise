@@ -121,8 +121,11 @@ class Common extends Controller
                 if ($expert){
                     foreach ($expert as $k=>$e){
                         switch ($e['status']){
-                            case 1:
+                            case 0:
                                 $expert[$k]['status_name'] = '已申请';
+                                break;
+                            case 1:
+                                $expert[$k]['status_name'] = '审核中';
                                 break;
                             case 2:
                                 $expert[$k]['status_name'] = '已通过';
@@ -172,8 +175,11 @@ class Common extends Controller
                 $EnterpriseDetail = (new Enterprise())->field(['*','from_unixtime(create_t) create_t','from_unixtime(update_t) update_t'])->where(['id'=>$id,'uid'=>$uid])->find()->toArray();
                 if ($EnterpriseDetail){
                     switch ($EnterpriseDetail['status']){
-                        case 1:
+                        case 0:
                             $EnterpriseDetail['status_name'] = '已申请';
+                            break;
+                        case 1:
+                            $EnterpriseDetail['status_name'] = '审核中';
                             break;
                         case 2:
                             $EnterpriseDetail['status_name'] = '已通过';

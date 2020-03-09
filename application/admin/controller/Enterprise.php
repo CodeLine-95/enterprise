@@ -23,8 +23,11 @@ class Enterprise extends Base
         if ($list){
             foreach ($list as $k=>$l){
                 switch ($l['status']){
-                    case 1:
+                    case 0:
                         $list[$k]['status_name'] = '已申请';
+                        break;
+                    case 1:
+                        $list[$k]['status_name'] = '审核中';
                         break;
                     case 2:
                         $list[$k]['status_name'] = '已通过';
