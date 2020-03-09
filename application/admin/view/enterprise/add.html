@@ -19,6 +19,12 @@
           <div class="layui-card-header">添加企业</div>
           <div class="layui-form layui-card-body" pad15>
             <div class="layui-form-item">
+              <label class="layui-form-label" for="credit_id">信用代码</label>
+              <div class="layui-input-block">
+                <input type="text" name="credit_id" id="credit_id" lay-verify="required" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
               <label class="layui-form-label" for="name">企业名称</label>
               <div class="layui-input-block">
                 <input type="text" name="name" id="name" lay-verify="required" class="layui-input">
@@ -31,34 +37,64 @@
               </div>
             </div>
             <div class="layui-form-item">
-              <label class="layui-form-label" for="address">企业地址</label>
+              <label class="layui-form-label" for="card_id">身份证编号</label>
               <div class="layui-input-block">
-                <input type="text" name="address" id="address" class="layui-input">
+                <input type="text" name="card_id" id="card_id" lay-verify="required" class="layui-input">
               </div>
             </div>
             <div class="layui-form-item">
-              <label class="layui-form-label" for="tel_name">联系人</label>
+              <label class="layui-form-label">资质类型</label>
+              <div class="layui-input-inline">
+                <input type="radio" name="type" title="企业工商营业执照" value="1" checked class="layui-input">
+                <input type="radio" name="type" title="其他资质证件" value="2" class="layui-input">
+              </div>
+            </div>
+<!--            <div class="layui-form-item">-->
+<!--              <label class="layui-form-label" for="address">企业地址</label>-->
+<!--              <div class="layui-input-block">-->
+<!--                <input type="text" name="address" id="address" class="layui-input">-->
+<!--              </div>-->
+<!--            </div>-->
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="certificate">资质文件</label>
               <div class="layui-input-block">
-                <input type="text" name="tel_name" id="tel_name" class="layui-input">
+                <button type="button" style="float:left;margin-right:1%;" id="certificate" class="layui-btn"><i class="layui-icon">&#xe67c;</i>上传</button>
+                <input type="text" value="{$field.certificate}" style="width:53%;float:left;display:none;background-color:#dcdcdc;" readonly name="certificate" class="layui-input">
+                <div id="certificate_img" style="margin-top: 10px;">
+
+                </div>
               </div>
             </div>
             <div class="layui-form-item">
-              <label class="layui-form-label" for="tel">联系方式</label>
+              <label class="layui-form-label" for="tel">法人电话</label>
               <div class="layui-input-block">
                 <input type="text" name="tel" id="tel" class="layui-input">
               </div>
             </div>
             <div class="layui-form-item">
-              <label class="layui-form-label" for="corporation">企业法人</label>
+              <label class="layui-form-label" for="corp">企业法人</label>
               <div class="layui-input-block">
-                <input type="text" name="corporation" id="corporation" class="layui-input">
+                <input type="text" name="corp" id="corp" class="layui-input">
               </div>
             </div>
             <div class="layui-form-item">
-              <label class="layui-form-label">签约状态</label>
+              <label class="layui-form-label" for="validity_start">有效期开始</label>
+              <div class="layui-input-block">
+                <input type="text" name="validity_start" id="validity_start" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label" for="validity_end">有效期结束</label>
+              <div class="layui-input-block">
+                <input type="text" name="validity_end" id="validity_end" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">注册状态</label>
               <div class="layui-input-inline">
-                <input type="radio" name="status" title="合作中" value="1" checked class="layui-input">
-                <input type="radio" name="status" title="已解约" value="0" class="layui-input">
+                <input type="radio" name="status" title="已申请" value="1" checked class="layui-input">
+                <input type="radio" name="status" title="已通过" value="2" class="layui-input">
+                <input type="radio" name="status" title="未通过" value="3" class="layui-input">
               </div>
             </div>
             <div class="layui-form-item">
@@ -73,7 +109,37 @@
   </div>
   <script>
     layui.use(['form','upload','laydate','layedit'], function(){
-      var form = layui.form;
+      var form = layui.form,laydate = layui.laydate,upload = layui.upload;
+      laydate.render({
+        elem: "#validity_start",
+        type: "datetime"
+      });
+      laydate.render({
+        elem: "#validity_end",
+        type: "datetime"
+      });
+      //多图上传实例
+      upload.render({
+        elem: '#certificate',
+        url: '{:url("AjaxAction/upload")}',
+        accept:"images",
+        acceptMime: 'image/*',
+        exts:"jpg|png|gif|bmp|jpeg",
+        auto:true,
+        size:{$conf['maxfile']},
+        drag:false,
+        before: function(obj) {
+          layer.msg('上传中...', {icon: 16,shade: 0.01,time: 0})
+        },
+        done: function(res) {
+          layer.close(layer.msg('上传成功！'));
+          $('input[name=certificate]').val(res.data);
+          $('#certificate_img').html('<img style="width: 100%;" src="'+res.data+'" />');
+        }
+        ,error: function(){
+          layer.msg('上传错误！');
+        }
+      });
       form.on('submit(add)', function(data){
         $.post('{:url("enterprise/add")}',data.field,function (res) {
           if (res.icon == 6){
