@@ -87,7 +87,7 @@
                 <td>
                   <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="crm_admin_show('编辑','{:url('enterprise/edit',['id'=>$l['id']])}')">编辑</button>
                   {if condition="$l['status'] == 1"}
-                    <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="admin_show('审核','{:url('enterprise/audit',['id'=>$l['id']])}')">审核</button>
+                    <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="admin_show('审核','{:url('enterprise/audit',['id'=>$l['id']])}',600,400)">审核</button>
                   {/if}
                   <button class="layui-btn layui-btn-normal layui-btn-sm" onclick="del('{$l['id']}')">删除</button>
                 </td>
