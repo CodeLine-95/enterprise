@@ -110,7 +110,16 @@ class Common extends Controller
                 }
                 $expertCount = (new Enterprise())->where(['uid'=>$params['uid']])->count();
                 if ($expertCount <= 0){
-                    return json(['codeMsg' => '暂无数据', 'code' => 400]);
+                    $json = [
+                        'codeMsg' => 'SUCCESS',
+                        'code' => 200,
+                        'totalCount' => 0,
+                        'page' => $params['page'],
+                        'totalPage' => 1,
+                        'pageSize' => $params['pageSize'],
+                        'data' => []
+                    ];
+                    return json($json);
                 }
                 $lastPage = ceil($expertCount / $params['pageSize']);
                 if ($params['page'] > $lastPage) {
