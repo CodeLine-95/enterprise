@@ -114,10 +114,15 @@ class Common extends Controller
                     $params['page'] = $lastPage;
                 }
                 $pageOffset = ($params['page'] - 1) * $params['pageSize'];
+//                $expert = (new Enterprise())
+//                    ->field(['*','from_unixtime(create_t) create_t','from_unixtime(update_t) update_t'])
+//                    ->where(['uid'=>$params['uid']])
+//                    ->limit($pageOffset, $params['pageSize'])->select()->toArray();
                 $expert = (new Enterprise())
                     ->field(['*','from_unixtime(create_t) create_t','from_unixtime(update_t) update_t'])
                     ->where(['uid'=>$params['uid']])
-                    ->limit($pageOffset, $params['pageSize'])->select()->toArray();
+                    ->limit($pageOffset, $params['pageSize'])->getLastSql();
+                var_dump($expert);die;
                 if ($expert){
                     foreach ($expert as $k=>$e){
                         switch ($e['status']){
