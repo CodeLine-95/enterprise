@@ -109,20 +109,18 @@ class Common extends Controller
                     $params['pageSize'] = 10;
                 }
                 $expertCount = (new Enterprise())->where(['uid'=>$params['uid']])->count();
+                if ($expertCount <= 0){
+                    return json(['codeMsg' => '暂无数据', 'code' => 400]);
+                }
                 $lastPage = ceil($expertCount / $params['pageSize']);
                 if ($params['page'] > $lastPage) {
                     $params['page'] = $lastPage;
                 }
                 $pageOffset = ($params['page'] - 1) * $params['pageSize'];
-//                $expert = (new Enterprise())
-//                    ->field(['*','from_unixtime(create_t) create_t','from_unixtime(update_t) update_t'])
-//                    ->where(['uid'=>$params['uid']])
-//                    ->limit($pageOffset, $params['pageSize'])->select()->toArray();
                 $expert = (new Enterprise())
                     ->field(['*','from_unixtime(create_t) create_t','from_unixtime(update_t) update_t'])
                     ->where(['uid'=>$params['uid']])
-                    ->limit($pageOffset, $params['pageSize'])->getLastSql();
-                var_dump($expert);die;
+                    ->limit($pageOffset, $params['pageSize'])->select()->toArray();
                 if ($expert){
                     foreach ($expert as $k=>$e){
                         switch ($e['status']){
