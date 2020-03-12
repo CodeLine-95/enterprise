@@ -96,9 +96,11 @@ class Users extends Base{
         }else{
             $id = input('id');
             $field = (new User())->where('id',$id)->find()->toArray();
-            $citys = explode('&nbsp;',$field['user_city']);
-            $field['user_city'] = $citys[0];
-            $field['user_city1'] = $citys[1];
+            if ($field['user_city']) {
+                $citys = explode('&nbsp;', $field['user_city']);
+                $field['user_city'] = $citys[0];
+                $field['user_city1'] = $citys[1];
+            }
             $this->assign('field',$field);
             return $this->fetch();
         }
