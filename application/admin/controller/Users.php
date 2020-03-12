@@ -100,6 +100,9 @@ class Users extends Base{
                 $citys = explode('&nbsp;', $field['user_city']);
                 $field['user_city'] = $citys[0];
                 $field['user_city1'] = $citys[1];
+            }else{
+                $field['user_city'] = '';
+                $field['user_city1'] = '';
             }
             $this->assign('field',$field);
             return $this->fetch();
