@@ -51,6 +51,7 @@
                     <input type="hidden" name="video" value="{$field.video}">
                     <video src="{$field.video}" style="width: 200px;" controls="controls"></video>
                   </div>
+                  <button class="layui-btn layui-btn-xs video_del" data-id="{$field.video}">删除</button>
                 </div>
               </div>
               {/if}
@@ -78,6 +79,9 @@
 <script>
   layui.use(['form','upload','laydate','layedit'], function(){
     var form = layui.form,upload = layui.upload;
+    $('div').on('click','.video_del',function(){
+      $(this).parent('div').remove();
+    });
     upload.render({
       elem: '#video',
       url: '{:url("AjaxAction/upload")}',
@@ -94,7 +98,7 @@
       done: function (res) {
         //如果上传失败
         if (res.status == 1) {
-          $('#Videos').append('<div style="margin-left: 10px;"><div style="margin-bottom: 10px;"><input type="hidden" name="video" value="'+res.data+'"><video src="' + res.data + '" style="width: 200px;" controls="controls"></video></div></div>');
+          $('#Videos').append('<div style="margin-left: 10px;"><div style="margin-bottom: 10px;"><input type="hidden" name="video" value="'+res.data+'"><video src="' + res.data + '" style="width: 200px;" controls="controls"></video></div><button class="layui-btn layui-btn-xs video_del" data-id="'+res.data+'">删除</button></div>');
           $('#Videos').show();
           return layer.msg("上传成功");
         }else{

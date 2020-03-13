@@ -89,7 +89,7 @@
         done: function(res) {
           layer.close(layer.msg('上传成功！'));
           $('input[name=face]').val(res.data);
-          $('#pic_img').html('<img src="'+res.data+'" />');
+          $('#pic_img').html('<img src="'+res.data+'" height="200px;" />');
         }
         ,error: function(){
           layer.msg('上传错误！');

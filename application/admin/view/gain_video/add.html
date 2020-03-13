@@ -82,7 +82,7 @@
         done: function (res) {
           //如果上传失败
           if (res.status == 1) {
-            $('#Videos').append('<div style="margin-left: 10px;"><div style="margin-bottom: 10px;"><input type="hidden" name="video" value="'+res.data+'"><video src="' + res.data + '" style="width: 200px;" controls="controls"></video></div></div>');
+            $('#Videos').append('<div style="margin-left: 10px;"><div style="margin-bottom: 10px;"><input type="hidden" name="video" value="'+res.data+'"><video src="' + res.data + '" style="width: 200px;" controls="controls"></video></div><button class="layui-btn layui-btn-xs video_del" data-id="'+res.data+'">删除</button></div>');
             $('#Videos').show();
             return layer.msg("上传成功");
           }else{
